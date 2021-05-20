@@ -1,1 +1,2 @@
-// Weather-app
+// issue #1 resolved
+
