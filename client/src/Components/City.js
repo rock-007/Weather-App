@@ -4,7 +4,7 @@ const City = ({cities}) => {
    
     const eachCity = cities.map((city, index) => {
         console.log(city)
-        return <Details name={city.daily.name} key={index} />
+        return <Details city={city.daily} forcast = {city.forcast}key={index} />
     })
 
     return(
