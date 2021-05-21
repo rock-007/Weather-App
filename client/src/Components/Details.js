@@ -4,8 +4,8 @@ const Details  = ({name}) => {
             <li>
                 {name}
             </li>        
-        <div/>
+        </div>
 
-)
-}
+)}
+
 export default Details;
