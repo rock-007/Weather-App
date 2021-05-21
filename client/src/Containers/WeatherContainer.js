@@ -10,17 +10,20 @@ const WeatherContainer = () => {
         getCities();
     }, [selectedCity])
 
-    const getCities = async (selectedCity) => {
+    const getCities = function() {
+
         const cityApi = `http://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`
         const forcastApi = `http://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&appid=a8f139819d7f5bf326630492c5f3a89a6`
+        Promise.all([fetch(cityApi), fetch(forcastApi)])
+
         const city = {daily: null, forcast: null}
 
 
-        const cityInfo = await fetch(cityApi)
+        const cityInfo =  fetch(cityApi)
             .then(res => res.json())
             .then(result => city.daily=result)
 
-        const cityForcast = await 
+        const cityForcast =  
                 fetch(forcastApi)
                     .then(res => res.json())
                     .then(result1 => city.forcast=result1 ) 
