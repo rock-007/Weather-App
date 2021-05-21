@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import City from '../components/City';
-import SearchForm from '../components/SearchForm';
+import SearchBar from '../components/SearchBar';
 
 const WeatherContainer = () => {
     const [cities, setCities] = useState([]);
@@ -22,11 +22,13 @@ const WeatherContainer = () => {
         setSelectedCity(city);
     }
 
+
+
     return (
         <div>
             <p>Hello world</p>
-            {/* <SearchForm/> */}
-            <City cities = {cities}/>
+            <SearchBar cities={cities} onCitySubmit={onCitySubmit} />
+            <City cities={cities}/>
         </div>
     )
 }

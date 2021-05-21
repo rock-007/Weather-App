@@ -3,7 +3,7 @@ import WeatherContainer from './containers/WeatherContainer';
 function App() {
   return (
     <div>
-      <p>Hello world App</p>
+      <p>Weather App</p>
       <WeatherContainer/>      
     </div>
   );
