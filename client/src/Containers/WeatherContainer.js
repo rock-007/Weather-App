@@ -4,27 +4,33 @@ import SearchForm from '../components/SearchForm';
 
 const WeatherContainer = () => {
     const [cities, setCities] = useState([]);
-    const [selectedCity, setSelectedCity] = useState('London');
+    const [selectedCity, setSelectedCity] = useState([]);
 
     useEffect(() => {
         getCities();
     }, [selectedCity])
 
     const getCities = function () {
-        const api = `http://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`
-        console.log(api)
-        fetch(api)
+        const cityApi = `http://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`
+        const forcastApi = `http://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&appid=a8f139819d7f5bf326630492c5f3a89a6`
+        const city = {daily: null, forcast: null}
+        fetch(cityApi)
             .then(res => res.json())
-            .then(result => setCities([...cities, result]))
-
-
+            .then(result => city.daily = result)
+            .then(
+                fetch(forcastApi)
+                    .then(res => res.json())
+                    .then(result1 => {
+                        console.log(result1)
+                        city.forcast = result1
+                        return setCities([...cities, city])
+                    })
+            )
     }
 
     const onCitySubmit = function (city) {
         setSelectedCity(city);
-
     }
-
 
 
     return (

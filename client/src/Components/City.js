@@ -1,9 +1,10 @@
 import Details from './Details';
-
+//const city = {daily:null, forcast:null}
 const City = ({cities}) => {
-    console.log(cities)
+   
     const eachCity = cities.map((city, index) => {
-        return <Details name={city.name} key={index} />
+        console.log(city)
+        return <Details name={city.daily.name} key={index} />
     })
 
     return(
