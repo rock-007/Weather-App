@@ -8,6 +8,7 @@ A user should be able to:
 - be able to interact with the page to submit a city to tailor the information displayed to that city
 - be able to display the information retreived in a graphical format e.g. a chart
 - recommend possible activities and/or clothing depending on the weather forecast
+
 ##Possible Extensions
 - Use a map to display the weather forecast.
 - Save favourite places into a database to allow quick viewing of particular places of interest to the user. 
