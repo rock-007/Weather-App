@@ -1,6 +1,7 @@
 import Details from './Details';
 
 const City = ({cities}) => {
+    console.log(cities)
     const eachCity = cities.map((city, index) => {
         return <Details name={city.name} key={index} />
     })
