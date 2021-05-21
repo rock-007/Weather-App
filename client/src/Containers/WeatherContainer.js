@@ -7,9 +7,12 @@ const WeatherContainer = () => {
     const [selectedCity, setSelectedCity] = useState(null);
 
     const getCities = function(){
-        // fetch('insert API here')
-        // .then(res => res.json())
+         fetch('http://api.openweathermap.org/data/2.5/weather?q=London&appid=1a9a20046a26886e891582ce46507106')
+         .then(res => res.json())
+         .then (result=> console.log(result.name, result.weather))
+        
     }
+    getCities();
 
     const onCitySubmit = function(city){
         setSelectedCity(city);
@@ -17,8 +20,9 @@ const WeatherContainer = () => {
 
     return (
         <div>
-            <SearchForm/>
-            <City/>
+            <p>Hello world</p>
+            {/* <SearchForm/>
+            <City/> */}
         </div>
     )
 }
