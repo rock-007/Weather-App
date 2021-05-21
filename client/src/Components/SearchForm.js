@@ -1,9 +1,9 @@
-const SearchBar = ({onCitySubmitted}) => {
+const SearchForm = ({onCitySubmit}) => {
 
     const handleSubmit = function (event) {
         event.preventDefault();
-        const chosenCity = event.target.city.value
-        onCitySubmitted(chosenCity);
+        const chosenCity = event.target.city.value;
+        onCitySubmit(chosenCity);
     }
 
     return (
@@ -18,4 +18,4 @@ const SearchBar = ({onCitySubmitted}) => {
 
 };
 
-export default SearchBar;
+export default SearchForm;
