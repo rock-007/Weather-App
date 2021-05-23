@@ -1,12 +1,15 @@
+import './SearchForm.css';
+
 const SearchForm = ({ onCitySubmit }) => {
     const handleSubmit = function (event) {
         event.preventDefault();
-        const chosenCity = event.target.city.value;
+        // const chosenCity = event.target.city.value;
+        const chosenCity = "London";
         onCitySubmit(chosenCity);
     };
 
     return (
-        <div>
+        <div id="form-wrapper">
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -14,7 +17,7 @@ const SearchForm = ({ onCitySubmit }) => {
                     id="city"
                     placeholder="Search for City"
                 />
-                <button type="submit">Search</button>
+                <button id="search-button" type="submit">Search</button>
             </form>
         </div>
     );

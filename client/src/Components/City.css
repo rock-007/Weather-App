@@ -1,0 +1,31 @@
+/* .city-card {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+} */
+
+#day-forecast {
+    /* display: flex; */
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 30px;
+	border: 1px solid;
+	padding: 10px;
+	box-shadow: 5px 10px 8px #888888;
+	background-color: #61717F;
+}
+
+/* #details-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+} */
+
+#city-name {
+	display: flex;
+	justify-content: center;
+}
+
+ul{
+	padding: 0;
+}

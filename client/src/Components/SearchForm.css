@@ -1,0 +1,11 @@
+#form-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #city, #search-button {
+      width: 100%;
+      padding: 5px;
+      border: 10px;
+  }

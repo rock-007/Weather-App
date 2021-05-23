@@ -34,7 +34,6 @@ const WeatherContainer = () => {
 
     return (
         <div>
-            <p>Hello world</p>
             <SearchForm cities={cities} onCitySubmit={onCitySubmit} />
             {selectedCity != null ? <City cities={cities} /> : null}
         </div>
