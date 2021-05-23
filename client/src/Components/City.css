@@ -1,31 +1,42 @@
-/* .city-card {
+.city-card {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
-} */
-
-#day-forecast {
-    /* display: flex; */
-    flex-wrap: wrap;
-    list-style-type: none;
-    margin: 30px;
-	border: 1px solid;
-	padding: 10px;
-	box-shadow: 5px 10px 8px #888888;
-	background-color: #61717F;
 }
 
-/* #details-list {
-    display: flex;
+#day-forecast {
+    margin: 30px;
+	padding: 30px;
+	box-shadow: 5px 10px 8px #888888;
+	background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+}
+
+#details-list {
     flex-wrap: wrap;
     list-style-type: none;
-} */
+}
 
 #city-name {
-	display: flex;
-	justify-content: center;
+	flex: 100%;
+	align-content: center;
+	text-align: center;
+	font-size: xx-large;
+
 }
 
 ul{
 	padding: 0;
+}
+
+#day-number {
+	margin-top: auto;
+	margin-bottom: 10px;
+	padding: 10px;
+	text-align: center;
+}
+
+li {
+	padding: 10px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

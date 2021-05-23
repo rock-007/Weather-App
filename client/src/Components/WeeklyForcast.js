@@ -1,8 +1,10 @@
+// import {} 'react-icons/wi';
+
 const WeeklyForcast = ({main, visibility, wind, clouds, rain, day}) => {
     console.log(main);
     return (
         <div id="day-forecast">
-            <h4> Day:{day + 1}</h4>
+            <h4 id="day-number"> Day: {day + 1}</h4>
             <ul id="details-list">
                 <li>
                     Temperature: {(main.temp - 273.15).toFixed(2)} ℃
