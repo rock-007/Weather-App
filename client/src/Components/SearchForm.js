@@ -1,4 +1,5 @@
 import './SearchForm.css';
+import './NavBar.css';
 
 const SearchForm = ({onCitySubmit}) => {
     const handleSubmit = function (event) {

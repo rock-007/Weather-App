@@ -7,15 +7,25 @@ const WeeklyForecast = ({main, wind, clouds, eachday, rain, day}) => {
 
     let displayClouds = function (clouds, rain) {
         console.log(clouds, rain)
-
-        if (clouds > 40 && rain > 2) {
+        console.log(`clouds ${clouds.all}`)
+        let rainCount = getRainCount(rain)
+        if (clouds.all > 40 && rainCount > 4) {
             return <WiDayShowers class="icon" />
-        } else if (rain < 4) {
+        } else if (clouds.all < 40) {
             return <WiDaySunny class="icon" />
         } else {
             return <WiDayCloudy class="icon" />
         }
+    }
 
+    let getRainCount = function (rain) {
+        let rainCount = 0
+        for (let rainNumber in rain)
+            if (rainNumber == '3h')
+                rainCount = rain['3h']
+            else if (rainNumber == '1h')
+                rainCount = rain['1h']
+        return rainCount
     }
 
     return (
@@ -39,7 +49,7 @@ const WeeklyForecast = ({main, wind, clouds, eachday, rain, day}) => {
                 <li>
                     {/* {rain = (rain > 2) ? <WiRain /> : <WiRaindrop />} */}
                     <WiRain class="icon" />
-                    {rain ? ` ${rain["3h"]}mm` : ` n/a`}
+                    {`${getRainCount(rain)} mm`}
                 </li>
             </ul>
         </div>
