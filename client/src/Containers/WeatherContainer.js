@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import City from "../components/City";
 import SearchForm from "../components/SearchForm";
 
@@ -14,8 +14,8 @@ const WeatherContainer = () => {
 
     const getCities = function (selectedCity) {
         const cityApi = `http://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`;
-        const forcastApi = `http://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`;
-        Promise.all([fetch(cityApi), fetch(forcastApi)])
+        const forecastApi = `http://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`;
+        Promise.all([fetch(cityApi), fetch(forecastApi)])
             .then((res) => {
                 return Promise.all(
                     res.map(function (res) {
@@ -24,7 +24,7 @@ const WeatherContainer = () => {
                 );
             })
             .then((result) =>
-                setCities([...cities, { daily: result[0], forcast: result[1] }])
+                setCities([...cities, {daily: result[0], forecast: result[1]}])
             );
     };
 

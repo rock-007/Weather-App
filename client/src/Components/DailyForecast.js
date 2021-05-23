@@ -1,4 +1,4 @@
-const DailyForcast = ({ city, forcast }) => {
+const DailyForecast = ({city, forecast}) => {
     //console.log(forcast["list"]);
 
     return (
@@ -15,5 +15,5 @@ const DailyForcast = ({ city, forcast }) => {
     );
 };
 
-export default DailyForcast;
+export default DailyForecast;
 //Note: I dont think we need the daily forcast as all the info is avaiable in the weekly forcast so not using this component

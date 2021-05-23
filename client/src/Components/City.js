@@ -1,21 +1,22 @@
-import DailyForcast from "./DailyForcast";
-import WeeklyForcast from "./WeeklyForcast";
+import DailyForecast from "./DailyForecast";
+import WeeklyForecast from "./WeeklyForecast";
 import './City.css';
 //const city = {daily:null, forcast:null}
-const City = ({ cities }) => {
+
+const City = ({cities}) => {
     // const eachCity = cities.map((city, index) => {
     //     console.log(city);
     //     return <DailyForcast city={city.daily} key={index} />;
     // });
-    const cityforcast = cities.map((city) => {
+    const cityforecast = cities.map((city) => {
         // console.log(city);
 
         return (
             <div class="city-card">
                 <h3 id="city-name">{city.daily.name}</h3>
-                {city.forcast.list
+                {city.forecast.list
                     .map((eachDay, index) => (
-                        <WeeklyForcast
+                        <WeeklyForecast
                             main={eachDay.main}
                             visibility={eachDay.visibility}
                             wind={eachDay.wind}
@@ -31,7 +32,7 @@ const City = ({ cities }) => {
     });
     return (
         <div>
-            <ul>{cityforcast}</ul>
+            <ul>{cityforecast}</ul>
         </div>
     );
 };

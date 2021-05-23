@@ -1,10 +1,10 @@
 import './SearchForm.css';
 
-const SearchForm = ({ onCitySubmit }) => {
+const SearchForm = ({onCitySubmit}) => {
     const handleSubmit = function (event) {
         event.preventDefault();
-        // const chosenCity = event.target.city.value;
-        const chosenCity = "London";
+        const chosenCity = event.target.city.value;
+        // const chosenCity = "London";
         onCitySubmit(chosenCity);
     };
 
