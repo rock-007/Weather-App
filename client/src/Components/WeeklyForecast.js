@@ -1,13 +1,9 @@
-import {WiThermometer, WiStrongWind, WiCloudy, WiDaySunny, WiRain, WiRaindrop, WiDayRain, WiDayShowers, WiDayCloudy} from "react-icons/wi";
+import {WiThermometer, WiStrongWind, WiDaySunny, WiRain, WiDayShowers, WiDayCloudy} from "react-icons/wi";
 
-const WeeklyForecast = ({main, wind, clouds, eachday, rain, day}) => {
-    // console.log(eachday["clouds"])
-
-    // clouds={eachDay.clouds["all"]}
+const WeeklyForecast = ({main, wind, clouds, rain, day}) => {
 
     let displayClouds = function (clouds, rain) {
-        console.log(clouds, rain)
-        console.log(`clouds ${clouds.all}`)
+
         let rainCount = getRainCount(rain)
         if (clouds.all > 40 && rainCount > 4) {
             return <WiDayShowers class="icon" />
@@ -36,20 +32,27 @@ const WeeklyForecast = ({main, wind, clouds, eachday, rain, day}) => {
                         : `Day ${day + 1}`}
             </h4>
             <ul id="details-list">
-                <li>
+                <li id= "sunny-cloudy">
                     {displayClouds(clouds, rain)}
                 </li>
-                <li>
-                    <WiThermometer class="icon" /> Max: {(main.temp_max - 273.15).toFixed(0)} ℃ <br /> Min: {(main.temp_min - 273.15).toFixed(0)} ℃
+                <li id="temperature">
+                    <WiThermometer class="icon" /> 
+                    <li id="min-max-temp">
+                    Max: {(main.temp_max - 273.15).toFixed(0)} ℃ <br /> Min: {(main.temp_min - 273.15).toFixed(0)} ℃
+                    </li>
                 </li>
-                <li>
-                    <WiStrongWind class="icon" /> {(wind["speed"] * 2.2369).toFixed(0)} mph
+                <li id="wind">
+                    <WiStrongWind class="icon" /> 
+                    <li>
+                    {(wind["speed"] * 2.2369).toFixed(0)} mph
+                    </li>
                 </li>
 
-                <li>
-                    {/* {rain = (rain > 2) ? <WiRain /> : <WiRaindrop />} */}
+                <li id="rain">
                     <WiRain class="icon" />
+                    <li>
                     {`${getRainCount(rain)} mm`}
+                    </li>
                 </li>
             </ul>
         </div>

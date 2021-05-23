@@ -35,13 +35,28 @@ ul{
 	margin-bottom: 10px;
 	padding: 10px;
 	text-align: center;
+    font-size: xx-large;
 }
 
-li {
+li { 
 	padding: 10px;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .icon {
     font-size: 50px;
+}
+
+#sunny-cloudy > .icon {
+    font-size: 150px;
+    justify-content: center;
+}
+
+#temperature, #wind, #rain {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#min-max-temp {
+    padding-left: 10;
 }
