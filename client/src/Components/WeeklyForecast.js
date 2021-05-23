@@ -15,18 +15,18 @@ const WeeklyForecast = ({main, visibility, wind, clouds, rain, day}) => {
             <h4 id="day-number"> Day: {day + 1}</h4>
             <ul id="details-list">
                 <li>
-                    <WiThermometer /> {(main.temp - 273.15).toFixed(0)} ℃
+                    <WiThermometer class="icon" /> {(main.temp - 273.15).toFixed(0)} ℃
                 </li>
                 <li>
-                    <WiStrongWind /> {wind["speed"]}
+                    <WiStrongWind class="icon" /> {wind["speed"]*2.2369.toFixed(0)} mph
                 </li>
                 <li>
-                    {clouds = (clouds > 50) ? <WiCloudy /> : <WiDaySunny />}
+                    {clouds = (clouds > 50) ? <WiCloudy class="icon" /> : <WiDaySunny class="icon" />}
                 </li>
                 <li>
                     {/* {rain = (rain > 2) ? <WiRain /> : <WiRaindrop />} */}
-                    <WiRain />
-                    {rain ? `Rain: ${rain["3h"]}mm` : `Rain: n/a`}
+                    <WiRain class="icon" />
+                    {rain ? ` ${rain["3h"]}mm` : ` n/a`}
                 </li>
             </ul>
         </div>

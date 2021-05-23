@@ -15,8 +15,7 @@ const City = ({cities}) => {
             <div class="city-card">
                 <h3 id="city-name">{city.daily.name}</h3>
                 {city.forecast.list
-                    .map((eachDay, index) => (
-                        <WeeklyForecast
+                    .map((eachDay, index) => (                        <WeeklyForecast
                             main={eachDay.main}
                             visibility={eachDay.visibility}
                             wind={eachDay.wind}
