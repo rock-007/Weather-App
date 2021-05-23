@@ -9,4 +9,7 @@ div > h1 {
     display: flex;
     justify-content: flex-end;
     margin: 20px;
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
 }
