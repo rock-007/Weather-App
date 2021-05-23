@@ -1,28 +1,41 @@
-import {WiThermometer} from "react-icons/wi";
-import {WiStrongWind} from "react-icons/wi";
-import {WiCloudy} from "react-icons/wi";
-import {WiDaySunny} from "react-icons/wi";
-import {WiRain} from "react-icons/wi";
-import {WiRaindrop} from "react-icons/wi";
+import {WiThermometer, WiStrongWind, WiCloudy, WiDaySunny, WiRain, WiRaindrop, WiDayRain, WiDayShowers, WiDayCloudy} from "react-icons/wi";
 
-const WeeklyForecast = ({main, visibility, wind, clouds, rain, day}) => {
+const WeeklyForecast = ({main, wind, clouds, eachday, rain, day}) => {
+    // console.log(eachday["clouds"])
 
-    let cloudy = clouds > 50;
-    let sunny = clouds < 50;
+    // clouds={eachDay.clouds["all"]}
+
+    let displayClouds = function (clouds, rain) {
+        console.log(clouds, rain)
+
+        if (clouds > 40 && rain > 2) {
+            return <WiDayShowers class="icon" />
+        } else if (rain < 4) {
+            return <WiDaySunny class="icon" />
+        } else {
+            return <WiDayCloudy class="icon" />
+        }
+
+    }
 
     return (
         <div id="day-forecast">
-            <h4 id="day-number"> Day: {day + 1}</h4>
+            <h4 id="day-number"> {
+                day == 0 ? 'Today'
+                    : day == 1 ? 'Tomorrow'
+                        : `Day ${day + 1}`}
+            </h4>
             <ul id="details-list">
                 <li>
-                    <WiThermometer class="icon" /> {(main.temp - 273.15).toFixed(0)} ℃
+                    {displayClouds(clouds, rain)}
                 </li>
                 <li>
-                    <WiStrongWind class="icon" /> {wind["speed"]*2.2369.toFixed(0)} mph
+                    <WiThermometer class="icon" /> Max: {(main.temp_max - 273.15).toFixed(0)} ℃ <br /> Min: {(main.temp_min - 273.15).toFixed(0)} ℃
                 </li>
                 <li>
-                    {clouds = (clouds > 50) ? <WiCloudy class="icon" /> : <WiDaySunny class="icon" />}
+                    <WiStrongWind class="icon" /> {(wind["speed"] * 2.2369).toFixed(0)} mph
                 </li>
+
                 <li>
                     {/* {rain = (rain > 2) ? <WiRain /> : <WiRaindrop />} */}
                     <WiRain class="icon" />

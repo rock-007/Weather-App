@@ -1,11 +1,27 @@
 #form-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0077b6;
+  color: aliceblue;
+}
 
-  #city, #search-button {
-      width: 100%;
-      padding: 5px;
-      border: 1;
-  }
+#search-button {
+  width: 100px;
+  padding: 5px;
+}
+
+form {
+    display: flex;
+    justify-content: flex-end;
+    height: 30px;
+    margin-right: 20px;
+    opacity: 0.8;
+}
+
+#city {
+    width: 250px;
+    display: flex;
+    margin-right: 10px;
+}

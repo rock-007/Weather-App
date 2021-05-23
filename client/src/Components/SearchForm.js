@@ -9,7 +9,8 @@ const SearchForm = ({onCitySubmit}) => {
     };
 
     return (
-        <div id="form-wrapper">
+        <div id="form-wrapper" class="nav-bar">
+        <h1 id="header">Weather</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"

@@ -1,0 +1,15 @@
+.nav-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* justify-content: center; */
+}
+
+div > h1 {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+}
+document.querySelector("#header")
+<h1 id="header">Weather</h1>
+\/html/body/div[1]/div/div/div/h1
