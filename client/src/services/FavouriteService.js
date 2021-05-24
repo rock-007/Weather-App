@@ -1,25 +1,22 @@
-const baseURL = 'http://localhost:5000/api/favourites/'
+const baseURL = "http://localhost:5000/api/favourites/";
 
+export const getFavourites = () => {
+    return fetch(baseURL)
+        .then((res) => res.json())
+        .then((result) => result);
+};
 
-export const getFavourites=()=> {
-     return fetch(baseURL)
-          .then(res => res.json())
-          .then(result => result);
-}
-
-  export const postFavourite = (favourite) => {
+export const postFavourite = (favouriteCity) => {
+    console.log(favouriteCity);
     return fetch(baseURL, {
-      method: 'POST',
-      body: JSON.stringify(favourite),
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      }
-    })
-      .then(res => console.log(res));
-  }
-
-
+        method: "POST",
+        body: JSON.stringify({ name: favouriteCity }),
+        headers: {
+            "Content-Type": "application/json",
+            // "Access-Control-Allow-Origin": "*",
+        },
+    }).then((res) => res);
+};
 
 //   export const deleteFavourite = (id) => {
 //     return fetch(baseURL + id, {

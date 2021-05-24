@@ -1,33 +1,54 @@
-import React, {useState, useEffect} from "react";
-import City from "../components/City";
-import SearchForm from "../components/SearchForm";
-import {getFavourites, postFavourite, deleteFavourite} from "../services/FavouriteService";
-
+import React, { useState, useEffect } from "react";
+import City from "../Components/City";
+import SearchForm from "../Components/SearchForm";
+import DisplayFavouite from "../Components/DisplayFavouite";
+import {
+    getFavourites,
+    postFavourite,
+    deleteFavourite,
+} from "../services/FavouriteService";
 
 const WeatherContainer = () => {
     const [cities, setCities] = useState([]);
     const [selectedCity, setSelectedCity] = useState(null);
-    const [favourites, setFavourites] = useState([])
-
+    const [favourites, setFavourites] = useState(null);
+    const [displayFavourites, setDisplayFavourites] = useState(null);
     useEffect(() => {
         if (selectedCity != null) {
             getCities(selectedCity);
         }
     }, [selectedCity]);
 
-    // useEffect(() => {
-    //     if (favourites != []) {
-    //         setFavourites(favourites);
-    //     }
-    // }, [favourites]);
+    useEffect(() => {
+        getFavourite();
+    }, []);
 
+    useEffect(() => {
+        if (favourites !== null) {
+            getFavouriteCities(favourites);
+        }
+    }, [favourites]);
 
+    const getFavouriteCities = function (favourites) {
+        console.log(favourites[0][0]["name"]);
+        let favouiteFetch = favourites[0].map((eachCity) => {
+            return fetch(
+                `http://api.openweathermap.org/data/2.5/weather?q=${eachCity["name"]}&appid=3031aac4ff517ddfc83b94a403d374b0`
+            );
+        });
+        console.log(favouiteFetch);
 
-    // const setFavourites = function (favourites){
-    //     // api call
-    //     postFavourite(favourites)
-
-    // }
+        Promise.all(favouiteFetch)
+            .then((res) => {
+                console.log(res);
+                return Promise.all(
+                    res.map(function (res) {
+                        return res.json();
+                    })
+                );
+            })
+            .then((result) => setDisplayFavourites(result));
+    };
 
     const getCities = function (selectedCity) {
         const cityApi = `http://pro.openweathermap.org/data/2.5/forecast/hourly?q=${selectedCity}&appid=3031aac4ff517ddfc83b94a403d374b0`;
@@ -54,25 +75,35 @@ const WeatherContainer = () => {
     };
 
     const onClick = function (favourite) {
-        setFavourites([...favourites, favourite])
-        console.log(favourites)
-    }
+        setFavourites([...favourites, favourite]);
+        console.log(favourites);
+    };
 
+    const getFavourite = () => {
+        getFavourites().then((result) => setFavourites([result]));
 
-    const addFavourite = (favourite) => {
+        //setFavourites([...favourites, result]);
+    };
+
+    const addFavourite = (favouriteCity) => {
         // const temp = favourites.map(favourite => favourite);
         // temp.push(favourite);
         // setSelectedCity(temp);
-        const result = postFavourite(favourites)
-
-
-        setFavourites([...favourites, result])
-        
+        console.log(favouriteCity);
+        postFavourite(favouriteCity).then(() => getFavourite());
     };
 
     return (
         <div>
-            <SearchForm cities={cities} onCitySubmit={onCitySubmit} onClick={onClick} addFavourite={addFavourite}/>
+            <SearchForm
+                cities={cities}
+                onCitySubmit={onCitySubmit}
+                onClick={onClick}
+                addFavourite={addFavourite}
+            />
+            {displayFavourites != null ? (
+                <DisplayFavouite displayFavourites1={displayFavourites} />
+            ) : null}
             {selectedCity != null ? <City cities={cities} /> : null}
         </div>
     );
