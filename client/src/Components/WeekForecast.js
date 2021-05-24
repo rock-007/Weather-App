@@ -14,7 +14,7 @@ const WeekForecast = ({weekForecast}) => {
                         visibility={eachDay.visibility}
                         wind={eachDay.wind}
                         day={index}
-                        clouds={eachDay["clouds"]}
+                        clouds={eachDay.clouds}
                         rain={eachDay.rain}
                         key={index}
                     />

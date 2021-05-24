@@ -18,7 +18,7 @@ const WeatherContainer = () => {
 
 
     const getForecasts = function (selectedCity) {
-        const dayForecastApi = `http://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`;
+        const dayForecastApi = `http://pro.openweathermap.org/data/2.5/forecast/hourly?q=${selectedCity}&appid=3031aac4ff517ddfc83b94a403d374b0`;
         const weekForecastApi = `http://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`;
         
         Promise.all([fetch(dayForecastApi), fetch(weekForecastApi)])
