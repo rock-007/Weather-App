@@ -13,22 +13,20 @@ const City = ({ cities }) => {
         console.log(city.forecast);
 
         return (
-            <div class="city-card">
-                <h3 id="city-name">{city.daily.city.name}</h3>
-                    <DailyChart daily={city.daily.list} />
-                <WeekForecast weekForecast={city.forecast.list} />
-                {/* {city.forecast.list
-                    .map((eachDay, index) => (
-                        <WeeklyForecast
-                            main={eachDay.main}
-                            eachday={eachDay}
-                            visibility={eachDay.visibility}
-                            wind={eachDay.wind}
-                            day={index}
-                            clouds={eachDay["clouds"]}
-                            rain={eachDay.rain}
-                            key={index}
-                        />
+            <div className="city-card">
+                <h3 id="city-name">{city.daily.name}</h3>
+                
+                {city.forecast.list
+                    .map((eachDay, index) => (<WeeklyForecast
+                        main={eachDay.main}
+                        eachday={eachDay}
+                        visibility={eachDay.visibility}
+                        wind={eachDay.wind}
+                        day={index}
+                        clouds={eachDay["clouds"]}
+                        rain={eachDay.rain}
+                        key={index}
+                    />
                     ))
                     .splice(0, 7)} */}
             </div>
