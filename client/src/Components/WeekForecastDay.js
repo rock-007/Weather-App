@@ -17,9 +17,9 @@ const WeekForecastDay = ({main, wind, clouds, rain, day}) => {
     let getRainCount = function (rain) {
         let rainCount = 0
         for (let rainNumber in rain)
-            if (rainNumber == '3h')
+            if (rainNumber === '3h')
                 rainCount = rain['3h']
-            else if (rainNumber == '1h')
+            else if (rainNumber === '1h')
                 rainCount = rain['1h']
         return rainCount
     }
@@ -27,8 +27,8 @@ const WeekForecastDay = ({main, wind, clouds, rain, day}) => {
     return (
         <div id="day-forecast">
             <h4 id="day-number"> {
-                day == 0 ? 'Today'
-                    : day == 1 ? 'Tomorrow'
+                day === 0 ? 'Today'
+                    : day === 1 ? 'Tomorrow'
                         : `Day ${day + 1}`}
             </h4>
             <ul id="details-list">
@@ -37,22 +37,22 @@ const WeekForecastDay = ({main, wind, clouds, rain, day}) => {
                 </li>
                 <li id="temperature">
                     <WiThermometer class="icon" /> 
-                    <li id="min-max-temp">
+                    <p id="min-max-temp">
                     Max: {(main.temp_max - 273.15).toFixed(0)} ℃ <br /> Min: {(main.temp_min - 273.15).toFixed(0)} ℃
-                    </li>
+                    </p>
                 </li>
                 <li id="wind">
                     <WiStrongWind class="icon" /> 
-                    <li>
+                    <p>
                     {(wind["speed"] * 2.2369).toFixed(0)} mph
-                    </li>
+                    </p>
                 </li>
 
                 <li id="rain">
                     <WiRain class="icon" />
-                    <li>
+                    <p>
                     {`${getRainCount(rain)} mm`}
-                    </li>
+                    </p>
                 </li>
             </ul>
         </div>

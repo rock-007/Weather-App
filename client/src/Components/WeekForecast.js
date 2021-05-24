@@ -2,7 +2,7 @@ import WeekForecastDay from "./WeekForecastDay";
 import './WeekForecast.css';
 
 const WeekForecast = ({weekForecast}) => {
-    if (weekForecast.length == 0){return <p>Loading</p>}
+    if (weekForecast.length === 0){return <p>Loading</p>}
     console.log(weekForecast)
     const longForecast = weekForecast.splice(0, 7)
     const week = longForecast.map((eachDay, index) => (

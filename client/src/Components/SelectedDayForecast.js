@@ -1,4 +1,4 @@
-const SelectedDayForecast = ({city, forecast}) => {
+const SelectedDayForecast = ({day, dayForecast}) => {
 
     return (
         <div>

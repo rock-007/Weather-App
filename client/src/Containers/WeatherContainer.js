@@ -4,7 +4,6 @@ import SearchForm from "../Components/SearchForm";
 import SelectedDayForecast from "../Components/SelectedDayForecast";
 
 const WeatherContainer = () => {
-    const [forecasts, setForecasts] = useState([]);
     const [weekForecast, setWeekForecast] = useState([]);
     const [dayForecast, setDayForecast] = useState([]);
     const [selectedCity, setSelectedCity] = useState(null);
@@ -35,6 +34,7 @@ const WeatherContainer = () => {
 
     const onCitySubmit = function (city) {
         setSelectedCity(city);
+        setSelectedDay([]);
     };
 
     const onSelectedDaySubmit = function (day) {
@@ -44,7 +44,7 @@ const WeatherContainer = () => {
     return (
         <div>
             <SearchForm onCitySubmit={onCitySubmit} />
-            {/* {selectedDay != null ? <SelectedDayForecast day = {selectedDay} forecasts = {forecasts}/> : null} */}
+            {selectedDay != null ? <SelectedDayForecast dayForecast = {dayForecast}/> : null}
             {selectedCity != null ? <WeekForecast weekForecast={weekForecast} onSelectedDaySubmit={onSelectedDaySubmit}/> : null}
         </div>
     );
