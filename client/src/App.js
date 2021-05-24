@@ -1,4 +1,4 @@
-import WeatherContainer from './containers/WeatherContainer';
+import WeatherContainer from './Containers/WeatherContainer';
 
 function App() {
   return (

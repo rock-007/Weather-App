@@ -1,21 +1,27 @@
 import React, {useState, useEffect} from "react";
-import City from "../components/City";
-import SearchForm from "../components/SearchForm";
+import WeekForecast from "../Components/WeekForecast";
+import SearchForm from "../Components/SearchForm";
+import SelectedDayForecast from "../Components/SelectedDayForecast";
 
 const WeatherContainer = () => {
-    const [cities, setCities] = useState([]);
+    const [forecasts, setForecasts] = useState([]);
+    const [weekForecast, setWeekForecast] = useState([]);
+    const [dayForecast, setDayForecast] = useState([]);
     const [selectedCity, setSelectedCity] = useState(null);
+    const [selectedDay, setSelectedDay] = useState(null);
 
     useEffect(() => {
         if (selectedCity != null) {
-            getCities(selectedCity);
+            getForecasts(selectedCity);
         }
     }, [selectedCity]);
 
-    const getCities = function (selectedCity) {
-        const cityApi = `http://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`;
-        const forecastApi = `http://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`;
-        Promise.all([fetch(cityApi), fetch(forecastApi)])
+
+
+    const getForecasts = function (selectedCity) {
+        const dayForecastApi = `http://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`;
+        const weekForecastApi = `http://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`;
+        Promise.all([fetch(dayForecastApi), fetch(weekForecastApi)])
             .then((res) => {
                 return Promise.all(
                     res.map(function (res) {
@@ -24,7 +30,7 @@ const WeatherContainer = () => {
                 );
             })
             .then((result) =>
-                setCities([...cities, {daily: result[0], forecast: result[1]}])
+                setForecasts([...forecasts, {day: result[0], week: result[1]}])
             );
     };
 
@@ -32,10 +38,15 @@ const WeatherContainer = () => {
         setSelectedCity(city);
     };
 
+    const onSelectedDaySubmit = function (day) {
+        setSelectedDay(day)
+    };
+
     return (
         <div>
-            <SearchForm cities={cities} onCitySubmit={onCitySubmit} />
-            {selectedCity != null ? <City cities={cities} /> : null}
+            <SearchForm onCitySubmit={onCitySubmit} />
+            {selectedDay != null ? <SelectedDayForecast day = {selectedDay} forecasts = {forecasts}/> : null}
+            {selectedCity != null ? <WeekForecast forecasts={forecasts} onSelectedDaySubmit={onSelectedDaySubmit}/> : null}
         </div>
     );
 };

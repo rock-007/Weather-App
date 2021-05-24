@@ -1,6 +1,6 @@
 import {WiThermometer, WiStrongWind, WiDaySunny, WiRain, WiDayShowers, WiDayCloudy} from "react-icons/wi";
 
-const WeeklyForecast = ({main, wind, clouds, rain, day}) => {
+const WeekForecastDay = ({main, wind, clouds, rain, day}) => {
 
     let displayClouds = function (clouds, rain) {
 
@@ -59,4 +59,4 @@ const WeeklyForecast = ({main, wind, clouds, rain, day}) => {
     );
 };
 
-export default WeeklyForecast;
+export default WeekForecastDay;
