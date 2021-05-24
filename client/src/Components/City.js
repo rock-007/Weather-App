@@ -1,7 +1,7 @@
 import DailyForecast from "./DailyForecast";
 import WeeklyForecast from "./WeeklyForecast";
 import "./City.css";
-import DailyChart from "../containers/DailyChart";
+import DailyChart from "../Containers/DailyChart";
 //const city = {daily:null, forcast:null}
 
 const City = ({ cities }) => {
