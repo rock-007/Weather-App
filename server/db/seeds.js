@@ -1,0 +1,2 @@
+use weather;
+db.dropDatabase();
