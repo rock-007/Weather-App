@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from "react";
 import City from "../components/City";
 import SearchForm from "../components/SearchForm";
+ import {getFavourites, addFavourite, updateFavourite, deleteFavourite} from "../services/FavouriteService";
+
 
 const WeatherContainer = () => {
     const [cities, setCities] = useState([]);
     const [selectedCity, setSelectedCity] = useState(null);
+    const [favourite, setfavourite] = useState({})
 
     useEffect(() => {
         if (selectedCity != null) {
@@ -32,9 +35,17 @@ const WeatherContainer = () => {
         setSelectedCity(city);
     };
 
+    const addFavourite = (favourite) => {
+        // const temp = favourites.map(favourite => favourite);
+        // temp.push(favourite);
+        // setSelectedCity(temp);
+         const temp = getFavourites()
+         //console.log(temp)
+    };
+
     return (
         <div>
-            <SearchForm cities={cities} onCitySubmit={onCitySubmit} />
+            <SearchForm cities={cities} onCitySubmit={onCitySubmit} addFavourite={addFavourite}/>
             {selectedCity != null ? <City cities={cities} /> : null}
         </div>
     );
