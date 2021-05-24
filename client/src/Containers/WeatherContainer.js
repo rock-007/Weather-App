@@ -1,19 +1,33 @@
 import React, {useState, useEffect} from "react";
 import City from "../components/City";
 import SearchForm from "../components/SearchForm";
-import {getFavourites, addFavourite, deleteFavourite} from "../services/FavouriteService";
+import {getFavourites, postFavourite, deleteFavourite} from "../services/FavouriteService";
 
 
 const WeatherContainer = () => {
     const [cities, setCities] = useState([]);
     const [selectedCity, setSelectedCity] = useState(null);
-    const [favourites, setFavourites] = useState({})
+    const [favourites, setFavourites] = useState([])
 
     useEffect(() => {
         if (selectedCity != null) {
             getCities(selectedCity);
         }
-    }, [selectedCity], [setFavourites]);
+    }, [selectedCity]);
+
+    // useEffect(() => {
+    //     if (favourites != []) {
+    //         setFavourites(favourites);
+    //     }
+    // }, [favourites]);
+
+
+
+    // const setFavourites = function (favourites){
+    //     // api call
+    //     postFavourite(favourites)
+
+    // }
 
     const getCities = function (selectedCity) {
         const cityApi = `http://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`;
@@ -36,20 +50,25 @@ const WeatherContainer = () => {
     };
 
     const onClick = function (favourite) {
-        setFavourites(favourite)
+        setFavourites([...favourites, favourite])
+        console.log(favourites)
     }
+
 
     const addFavourite = (favourite) => {
         // const temp = favourites.map(favourite => favourite);
         // temp.push(favourite);
         // setSelectedCity(temp);
-         const temp = getFavourites()
-         console.log(temp)
+        const result = postFavourite(favourites)
+
+
+        setFavourites([...favourites, result])
+        
     };
 
     return (
         <div>
-            <SearchForm cities={cities} onCitySubmit={onCitySubmit} addFavourite={addFavourite}/>
+            <SearchForm cities={cities} onCitySubmit={onCitySubmit} onClick={onClick} addFavourite={addFavourite}/>
             {selectedCity != null ? <City cities={cities} /> : null}
         </div>
     );
