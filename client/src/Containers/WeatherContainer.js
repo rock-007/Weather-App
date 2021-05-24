@@ -13,7 +13,7 @@ const WeatherContainer = () => {
     }, [selectedCity]);
 
     const getCities = function (selectedCity) {
-        const cityApi = `http://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`;
+        const cityApi = `http://pro.openweathermap.org/data/2.5/forecast/hourly?q=${selectedCity}&appid=3031aac4ff517ddfc83b94a403d374b0`;
         const forecastApi = `http://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`;
         Promise.all([fetch(cityApi), fetch(forecastApi)])
             .then((res) => {
