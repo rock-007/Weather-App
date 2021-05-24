@@ -31,7 +31,9 @@ const WeatherContainer = () => {
             })
             .then((result) =>
                 setForecasts([...forecasts, {day: result[0], week: result[1]}])
-            );
+               
+            ); 
+            console.log("Promise", forecasts)
     };
 
     const onCitySubmit = function (city) {
@@ -44,8 +46,9 @@ const WeatherContainer = () => {
 
     return (
         <div>
+            {console.log(forecasts)}
             <SearchForm onCitySubmit={onCitySubmit} />
-            {selectedDay != null ? <SelectedDayForecast day = {selectedDay} forecasts = {forecasts}/> : null}
+            {/* {selectedDay != null ? <SelectedDayForecast day = {selectedDay} forecasts = {forecasts}/> : null} */}
             {selectedCity != null ? <WeekForecast forecasts={forecasts} onSelectedDaySubmit={onSelectedDaySubmit}/> : null}
         </div>
     );
