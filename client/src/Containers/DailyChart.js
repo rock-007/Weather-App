@@ -12,6 +12,12 @@ import { BsGraphUp } from "react-icons/bs";
 import "react-responsive-modal/styles.css";
 import { Line } from "react-chartjs-2";
 
+
+
+
+
+
+
 const DailyChart = function ({ daily }) {
     console.log(daily);
     const [chartData, setChartData] = useState({
