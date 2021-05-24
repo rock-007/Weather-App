@@ -1,16 +1,14 @@
 import WeekForecastDay from "./WeekForecastDay";
 import './WeekForecast.css';
 
-const WeekForecast = ({forecasts}) => {
-    if (!forecasts){return <p>Loading</p>}
-    const weekForecast = forecasts.map((forecast) => {
-        console.log(forecast)
-        console.log(forecasts)
-        return (
-            <div class="city-card">
-                <h3 id="city-name">{forecast.day.name}</h3>
-                {forecast.week.list
-                    .map((eachDay, index) => (<WeekForecastDay
+const WeekForecast = ({weekForecast}) => {
+    if (weekForecast.length == 0){return <p>Loading</p>}
+    console.log(weekForecast)
+    const longForecast = weekForecast.splice(0, 7)
+    const week = longForecast.map((eachDay, index) => (
+                <div class="city-card">                
+                    <h3 id="city-name">{eachDay.name}</h3>
+                    <WeekForecastDay
                         main={eachDay.main}
                         eachday={eachDay}
                         visibility={eachDay.visibility}
@@ -20,13 +18,10 @@ const WeekForecast = ({forecasts}) => {
                         rain={eachDay.rain}
                         key={index}
                     />
-                    ))
-                    .splice(0, 7)}
-            </div>
-        );
-    });
+                </div>))
+            
     return (
-            <ul>{weekForecast}</ul>
+            <ul>{week}</ul>
     );
 };
 

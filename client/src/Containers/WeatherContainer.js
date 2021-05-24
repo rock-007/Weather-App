@@ -21,19 +21,16 @@ const WeatherContainer = () => {
     const getForecasts = function (selectedCity) {
         const dayForecastApi = `http://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`;
         const weekForecastApi = `http://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`;
+        
         Promise.all([fetch(dayForecastApi), fetch(weekForecastApi)])
             .then((res) => {
-                return Promise.all(
-                    res.map(function (res) {
-                        return res.json();
-                    })
-                );
+                return Promise.all(res.map(function (res) {return res.json()}))
             })
-            .then((result) =>
-                setForecasts([...forecasts, {day: result[0], week: result[1]}])
-               
-            ); 
-            console.log("Promise", forecasts)
+            .then((result) => {
+                setDayForecast(result[0]);
+                setWeekForecast(result[1].list)   
+            }); 
+    
     };
 
     const onCitySubmit = function (city) {
@@ -46,10 +43,9 @@ const WeatherContainer = () => {
 
     return (
         <div>
-            {console.log(forecasts)}
             <SearchForm onCitySubmit={onCitySubmit} />
             {/* {selectedDay != null ? <SelectedDayForecast day = {selectedDay} forecasts = {forecasts}/> : null} */}
-            {selectedCity != null ? <WeekForecast forecasts={forecasts} onSelectedDaySubmit={onSelectedDaySubmit}/> : null}
+            {selectedCity != null ? <WeekForecast weekForecast={weekForecast} onSelectedDaySubmit={onSelectedDaySubmit}/> : null}
         </div>
     );
 };
