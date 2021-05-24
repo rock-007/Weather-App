@@ -1,19 +1,19 @@
 import React, {useState, useEffect} from "react";
 import City from "../components/City";
 import SearchForm from "../components/SearchForm";
- import {getFavourites, addFavourite, updateFavourite, deleteFavourite} from "../services/FavouriteService";
+import {getFavourites, addFavourite, deleteFavourite} from "../services/FavouriteService";
 
 
 const WeatherContainer = () => {
     const [cities, setCities] = useState([]);
     const [selectedCity, setSelectedCity] = useState(null);
-    const [favourite, setfavourite] = useState({})
+    const [favourites, setFavourites] = useState({})
 
     useEffect(() => {
         if (selectedCity != null) {
             getCities(selectedCity);
         }
-    }, [selectedCity]);
+    }, [selectedCity], [setFavourites]);
 
     const getCities = function (selectedCity) {
         const cityApi = `http://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`;
@@ -35,12 +35,16 @@ const WeatherContainer = () => {
         setSelectedCity(city);
     };
 
+    const onClick = function (favourite) {
+        setFavourites(favourite)
+    }
+
     const addFavourite = (favourite) => {
         // const temp = favourites.map(favourite => favourite);
         // temp.push(favourite);
         // setSelectedCity(temp);
          const temp = getFavourites()
-         //console.log(temp)
+         console.log(temp)
     };
 
     return (

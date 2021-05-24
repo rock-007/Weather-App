@@ -12,7 +12,7 @@ const City = ({cities}) => {
         // console.log(city);
 
         return (
-            <div class="city-card">
+            <div className="city-card">
                 <h3 id="city-name">{city.daily.name}</h3>
                 
                 {city.forecast.list
