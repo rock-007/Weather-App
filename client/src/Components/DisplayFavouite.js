@@ -6,7 +6,12 @@ const DisplayFavouite = ({ displayFavourites1 }) => {
   const display = displayFavourites1.map((eachFavourite, index) => {
     return <FavouriteCity eachCity={eachFavourite} key={index} />;
   });
-  return <>{display}</>;
+  return (
+    <>
+      {" "}
+      <div className="fav-forecast">{display}</div>
+    </>
+  );
 };
 
 export default DisplayFavouite;

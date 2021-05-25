@@ -1,67 +1,93 @@
 .city-card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
 }
 
 #day-forecast {
-    margin: 30px;
-    padding: 30px;
-    width: 200px;
-    box-shadow: 5px 10px 8px #888888;
-    background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  margin: 30px;
+  padding: 30px;
+  width: 200px;
+  box-shadow: 5px 10px 8px #888888;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  color: white;
 }
 
 #details-list {
-    flex-wrap: wrap;
-    list-style-type: none;
+  flex-wrap: wrap;
+  list-style-type: none;
 }
 
 #city-name {
-    flex: 100% 1;
-    align-content: center;
-    text-align: center;
-    font-size: 50px;
-    font-weight: 500;
-    margin: 0px;
-    padding: 10px;
+  flex: 100% 1;
+  align-content: center;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 500;
+  margin: 0px;
+  padding: 10px;
+  background-color: #2d3142;
+  color: white;
 }
 
 ul {
-    padding: 0;
+  padding: 0;
 }
 
 #day-number {
-    margin-top: auto;
-    margin-bottom: 10px;
-    padding: 10px;
-    text-align: center;
-    font-size: xx-large;
+  margin-top: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+  font-size: xx-large;
 }
 
 li {
-    padding: 10px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .icon {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 #sunny-cloudy > .icon {
-    font-size: 150px;
-    justify-content: center;
+  font-size: 150px;
+  justify-content: center;
 }
 
 #temperature,
 #wind,
 #rain {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #min-max-temp {
-    padding: 0;
-    padding-left: 10px;
+  padding: 0;
+  padding-left: 10px;
+}
+
+.fav-forecast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.fav-forecast ul > li {
+  display: inline;
+  list-style-type: none;
+}
+
+#details-list2 {
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 30px;
+  padding: 30px;
+  width: 200px;
+  box-shadow: 5px 10px 8px #888888;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  color: white;
 }

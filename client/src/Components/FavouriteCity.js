@@ -33,18 +33,22 @@ const FavouriteCity = ({ eachCity }) => {
 
   return (
     <>
-      <div>{eachCity["name"]}</div>
-      <ul id="details-list">
-        <div id="sunny-cloudy">
-          {displayClouds(eachCity["clouds"]["all"])}
+      <ul id="details-list2">
+        <li>{eachCity["name"]}</li>
 
-          <div id="temperature">
-            <WiThermometer class="icon" />
-            <div id="min-max-temp">
-              Max: {(eachCity["main"]["temp_max"] - 273.15).toFixed(0)} ℃ <br />{" "}
-              Min: {(eachCity["main"]["temp_max"] - 273.15).toFixed(0)} ℃
+        <div id="sunny-cloudy">
+          <li>{displayClouds(eachCity["clouds"]["all"])} </li>
+          <li>
+            {" "}
+            <div id="temperature">
+              <WiThermometer class="icon" />
+              <div id="min-max-temp">
+                Max: {(eachCity["main"]["temp_max"] - 273.15).toFixed(0)} ℃{" "}
+                <br /> Min: {(eachCity["main"]["temp_max"] - 273.15).toFixed(0)}{" "}
+                ℃
+              </div>
             </div>
-          </div>
+          </li>
         </div>
       </ul>
     </>
