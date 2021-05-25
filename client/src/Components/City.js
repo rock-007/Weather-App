@@ -30,9 +30,9 @@ const City = ({ cities }) => {
                         />
                     ))
                     .splice(0, 7)}{" "}
-                */}
             </div>
         );
+        
     });
     return <ul>{cityforecast}</ul>;
 };
