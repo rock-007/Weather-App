@@ -1,52 +1,60 @@
-import DailyForecast from "../components/DailyForecast";
+import "./FavouriteCity.css";
+import {
+    WiThermometer,
+    WiStrongWind,
+    WiDaySunny,
+    WiRain,
+    WiDayShowers,
+    WiDayCloudy,
+} from "react-icons/wi";
 
-const FavouriteList = ({favourites, deleteFavourite}) => {
-    const favouriteCities = favourites.map((favourite, index) => {
-        return <Favourite
-        key={favourit._id}
-        favourite={favourite}
-        deleteFavourite={deleteFavourite}
-        />
-    });
+const FavouriteCity = ({eachCity, deleteFavourite}) => {
+    let displayClouds = function (clouds) {
+        console.log(clouds);
+        if (clouds > 41) {
+            return <WiDayCloudy class="icon" />;
+        } else if (clouds <= 41) {
+            return <WiDaySunny class="icon" />;
+        }
+    };
+    console.log("ddf", eachCity);
 
-    return(
-        <section id="favourites">
-        <h2>Favourite Cities</h2>
-        <div>
-            {favouriteCities}
-        </div>
-        </section>
-    )
+    const handleDelete = (cityName) => {
+        console.log("55", cityName);
+        deleteFavourite(cityName);
+    };
 
-    
-    const cityforecast = cities.map((city, index) => {
-
-
-        return (
-            <div className="fav-city-card" key={index}>
-                <h3 id="city-name">{city.daily.name}</h3>
-                
-                {city.daily.list
-                    .map((eachDay, index) => (<DailyForecast
-                        key={index}
-                        main={eachDay.main}
-                        eachday={eachDay}
-                        visibility={eachDay.visibility}
-                        wind={eachDay.wind}
-                        day={index}
-                        clouds={eachDay["clouds"]}
-                        rain={eachDay.rain}
-                    />
-                    ))
-                    .splice(0, 7)}
-            </div>
-        );
-    });
     return (
-            <ul>{cityforecast}</ul>
+        <>
+            <div className="details-list2">
+                {/* <li>{" "}</li> */}
+                <li id="fav-city-name">{eachCity["name"]}</li>
+                <div id="sun-temperature">
+                    <li id="fav-sunny-cloudy">
+                        {displayClouds(eachCity["clouds"]["all"])}{" "}
+                    </li>
+                    {/* <li>{" "}</li> */}
+                    <div id="fav-temperature">
+                        <WiThermometer class="icon" />
+                        <div id="min-max-temp">
+                            Max: {(eachCity["main"]["temp_max"] - 273.15).toFixed(0)} ℃ <br />{" "}
+                            Min: {(eachCity["main"]["temp_max"] - 273.15).toFixed(0)} ℃
+                        </div>
+                    </div>
+                    <div id="delete-button">
+                    <input
+                        id="delete-button"
+                        type="submit"
+                        value="Delete" a
+                        onClick={() => {
+                            handleDelete(eachCity["name"]);
+                        }}
+                    />
+                    </div>
+                </div>
+            </div>
+        </>
     );
-
 };
 
-export default FavouriteList;
-
+export default FavouriteCity;

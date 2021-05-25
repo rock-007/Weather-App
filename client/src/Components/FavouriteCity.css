@@ -1,0 +1,70 @@
+.fav-forecast {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.details-list2 {
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; */
+    width: 260px;
+    box-shadow: 5px 10px 8px #888888;
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%); 
+    list-style: none;
+    margin: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    color: white;
+}
+
+.icon {
+    font-size: 50px;
+  }
+
+#fav-city-name{
+    font-size: 30px;
+}
+  
+#fav-sunny-cloudy > .icon {
+    font-size: 70px;
+    justify-content: center;
+}
+      
+#Layer-1 {
+    justify-content: center;  
+}
+  
+#fav-temperature {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sun-temperature {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+  
+  
+#min-max-temp, #wind-number, #rain-number {
+    width: 100px;
+  
+}
+
+#delete-button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    background-color: #FBAB7E;
+    width: min-content;
+    border-radius: 15px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-color: #e7e7e7;
+    color: white;
+    
+}

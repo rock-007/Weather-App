@@ -63,7 +63,7 @@ const WeatherContainer = () => {
         );
       })
       .then((result) =>
-        setCities([...cities, { daily: result[0], forecast: result[1] }])
+        setCities([{ daily: result[0], forecast: result[1] }])
       );
   };
 
@@ -79,14 +79,10 @@ const WeatherContainer = () => {
 
   const getFavourite = () => {
     getFavourites().then((result) => setFavourites([result]));
-
-    //setFavourites([...favourites, result]);
   };
 
   const addFavourite = (favouriteCity) => {
-    // const temp = favourites.map(favourite => favourite);
-    // temp.push(favourite);
-    // setSelectedCity(temp);
+
     console.log(favouriteCity);
     postFavourite(favouriteCity).then(() => getFavourite());
   };
@@ -107,7 +103,7 @@ const WeatherContainer = () => {
         addFavourite={addFavourite}
       />
       {displayFavourites != null ? (
-        <DisplayFavouite
+        <DisplayFavourite
           displayFavourites1={displayFavourites}
           deleteFavourite2={deleteFav}
         />

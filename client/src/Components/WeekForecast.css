@@ -1,7 +1,7 @@
 .city-card {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     list-style-type: none;
     margin: 50px;
 }
@@ -17,10 +17,11 @@
   width: 200px;
   box-shadow: 5px 10px 8px #888888;
   background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  color: white;
 }
 
 #day-0 {
-    flex-basis: 40%;
+    flex-basis: 50%;
     box-shadow: 5px 10px 8px #888888;
 	background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
     margin: 30px;
@@ -30,10 +31,9 @@
 }
 
 #daily-chart {
-    flex-basis: 40%;
-    width: 40%;
+    flex-basis: 50%;
+    width: 50%;
     margin: 30px;
-	/* padding: 30px; */
 }
 
 #details-list {
@@ -48,19 +48,16 @@
   font-size: 50px;
   font-weight: 500;
   margin: 0px;
-  /* padding: 10px; */
 }
 
 #daily-chart {
   flex-basis: 40%;
   width: 40%;
   margin: 30px;
-  /* padding: 30px; */
 }
 
 #day-0 {
   flex-basis: 40%;
-
   box-shadow: 5px 10px 8px #888888;
   background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
   margin: 30px;
@@ -93,7 +90,7 @@ li {
     font-size: 150px;
     justify-content: center;}
 
-#Lauyer-1.city-card {
+#Layer-1.city-card {
     justify-content: center;
     font-size: 350px;
 
@@ -104,7 +101,8 @@ li {
 #rain {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 #min-max-temp, #wind-number, #rain-number {
