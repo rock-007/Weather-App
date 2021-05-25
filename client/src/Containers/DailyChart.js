@@ -19,7 +19,6 @@ import { Line } from "react-chartjs-2";
 
 
 const DailyChart = function ({ daily }) {
-    console.log(daily);
     const [chartData, setChartData] = useState({
         labels: [
             `${daily[0]["dt_txt"].match(/\s([0-9]{2})/g)}:00 `,
@@ -57,21 +56,7 @@ const DailyChart = function ({ daily }) {
                         maxTicksLimit: 10,
                         beginAtZero: true,
                     },
-                    // type: "linear",
-                    // display: true,
-                    // position: "left",
-                    // id: "y-axis-1",
                 },
-                // ,
-                // {
-                //     type: "linear",
-                //     display: true,
-                //     position: "right",
-                //     id: "y-axis-2",
-                //     gridLines: {
-                //         drawOnArea: false,
-                //     },
-                // },
             ],
         },
     };
@@ -80,7 +65,7 @@ const DailyChart = function ({ daily }) {
         const average = daily.reduce((aver, eachHour) => {
             return eachHour["main"]["temp"] + aver;
         }, 0);
-        console.log(daily.leng);
+
     };
 
     const averageWinds = (daily) => {};

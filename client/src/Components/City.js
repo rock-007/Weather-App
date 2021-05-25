@@ -1,24 +1,23 @@
-// import DailyForecast from "./DailyForecast";
 import WeeklyForecast from "./WeeklyForecast";
 import "./City.css";
 import DailyChart from "../Containers/DailyChart";
-//const city = {daily:null, forcast:null}
 
 const City = ({ cities }) => {
-    // const eachCity = cities.map((city, index) => {
-    //     console.log(city);
-    //     return <DailyForcast city={city.daily} key={index} />;
-    // });
-    const cityforecast = cities.map((city) => {
-        console.log(city.forecast);
-
+    if (cities.length === 0) {
+        return <p>Loading</p>;
+    }
+    console.log(cities);
+    const cityForecast = cities.map((city) => {
+        
+        
         return (
             <div className="city-card">
                 <h3 id="city-name">{city.daily.city.name}</h3>
-                <DailyChart daily={city.daily.list} />
+                <DailyChart className="daily-chart" daily={city.daily.list} />
                 {city.forecast.list
                     .map((eachDay, index) => (
                         <WeeklyForecast
+                            key={index}
                             main={eachDay.main}
                             eachday={eachDay}
                             visibility={eachDay.visibility}
@@ -26,7 +25,6 @@ const City = ({ cities }) => {
                             day={index}
                             clouds={eachDay["clouds"]}
                             rain={eachDay.rain}
-                            key={index}
                         />
                     ))
                     .splice(0, 7)}{" "}
@@ -34,7 +32,7 @@ const City = ({ cities }) => {
         );
         
     });
-    return <ul>{cityforecast}</ul>;
+    return <ul>{cityForecast}</ul>;
 };
 
 export default City;
