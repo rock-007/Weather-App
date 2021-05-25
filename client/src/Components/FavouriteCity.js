@@ -20,24 +20,16 @@ const FavouriteCity = ({eachCity, deleteFavourite}) => {
 
     return (
         <>
-            <ul class="details-list2">
-                <li>
-                    {" "}
-                    {/* <div style={{ position: "absolute", alignItems: "center" }}>
-            <p>X</p>
-          </div> */}
-                </li>
-
-                <li>{eachCity["name"]}</li>
-
-                <div id="sunny-cloudy">
-                    <li>{displayClouds(eachCity["clouds"]["all"])} </li>
-                    <li>
-                        {" "}
-                        <div id="temperature">
-                            <WiThermometer class="icon" />
-                            <div id="min-max-temp">
-                                Max:{" "}
+            <div className="details-list2">
+                <li id="fav-city-name">{eachCity["name"]}</li>
+                <div id="sun-temperature">
+                    <li id="fav-sunny-cloudy">
+                        {displayClouds(eachCity["clouds"]["all"])}{" "}
+                    </li>
+                    <div id="fav-temperature">
+                        <WiThermometer class="icon" />
+                        <div id="min-max-temp">
+                        Max:{" "}
                                 {(
                                     eachCity["main"]["temp_max"] - 273.15
                                 ).toFixed(0)}{" "}
@@ -46,19 +38,21 @@ const FavouriteCity = ({eachCity, deleteFavourite}) => {
                                     eachCity["main"]["temp_max"] - 273.15
                                 ).toFixed(0)}{" "}
                                 ℃
-                            </div>
                         </div>
-                    </li>
+                    </div>
+                    <div id="delete-button">
                     <input
+                        id="delete-button"
                         type="submit"
                         value="Delete"
                         onClick={() => {
                             handleDelete(eachCity["name"]);
                         }}
                     />
+                    </div>
                 </div>
-            </ul>
-        </>
+            </div>
+            </>
     );
 };
 

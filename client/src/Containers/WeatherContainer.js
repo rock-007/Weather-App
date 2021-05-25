@@ -116,7 +116,7 @@ const WeatherContainer = () => {
                 addFavourite={addFavourite}
             />
             {displayFavourites != null ? (
-                <DisplayFavouite
+                <DisplayFavourite
                     displayFavourites1={displayFavourites}
                     deleteFavourite2={deleteFav}
                 />
