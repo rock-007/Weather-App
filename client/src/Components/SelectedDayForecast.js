@@ -8,7 +8,6 @@ import {
 } from "react-icons/wi";
 
 const SelectedDayForecast = ({ dayForecast }) => {
-    console.log(dayForecast);
     const clouds = dayForecast.clouds;
     const rain = dayForecast.rain;
     const main = dayForecast.main;
