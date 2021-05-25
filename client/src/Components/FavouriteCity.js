@@ -7,7 +7,7 @@ import {
   WiDayCloudy,
 } from "react-icons/wi";
 
-const FavouriteCity = ({ eachCity }) => {
+const FavouriteCity = ({ eachCity, deleteFavourite }) => {
   // let  clouds= eachCity["clouds"]
 
   // console.log(rain)
@@ -31,9 +31,21 @@ const FavouriteCity = ({ eachCity }) => {
   };
   console.log("ddf", eachCity);
 
+  const handleDelete = (cityName) => {
+    console.log("55", cityName);
+    deleteFavourite(cityName);
+  };
+
   return (
     <>
-      <ul id="details-list2">
+      <ul class="details-list2">
+        <li>
+          {" "}
+          {/* <div style={{ position: "absolute", alignItems: "center" }}>
+            <p>X</p>
+          </div> */}
+        </li>
+
         <li>{eachCity["name"]}</li>
 
         <div id="sunny-cloudy">
@@ -49,6 +61,13 @@ const FavouriteCity = ({ eachCity }) => {
               </div>
             </div>
           </li>
+          <input
+            type="submit"
+            value="Delete"
+            onClick={() => {
+              handleDelete(eachCity["name"]);
+            }}
+          />
         </div>
       </ul>
     </>

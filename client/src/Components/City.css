@@ -81,7 +81,7 @@ li {
   list-style-type: none;
 }
 
-#details-list2 {
+.details-list2 {
   flex-wrap: wrap;
   list-style-type: none;
   margin: 30px;

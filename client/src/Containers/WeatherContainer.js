@@ -89,6 +89,13 @@ const WeatherContainer = () => {
     console.log(favouriteCity);
     postFavourite(favouriteCity).then(() => getFavourite());
   };
+  const deleteFav = (city) => {
+    console.log(city);
+    // delete and rerender
+    deleteFavourite(city).then(() => {
+      setFavourites(favourites.filter((eachCity) => eachCity != city));
+    });
+  };
 
   return (
     <div>
@@ -99,7 +106,10 @@ const WeatherContainer = () => {
         addFavourite={addFavourite}
       />
       {displayFavourites != null ? (
-        <DisplayFavouite displayFavourites1={displayFavourites} />
+        <DisplayFavouite
+          displayFavourites1={displayFavourites}
+          deleteFavourite2={deleteFav}
+        />
       ) : null}
       {selectedCity != null ? <City cities={cities} /> : null}
     </div>
