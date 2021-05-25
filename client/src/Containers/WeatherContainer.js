@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import City from "../Components/City";
 import SearchForm from "../Components/SearchForm";
-import DisplayFavouite from "../Components/DisplayFavouite";
+import DisplayFavourite from "../Components/DisplayFavourite";
 import {
     getFavourites,
     postFavourite,
@@ -92,7 +92,7 @@ const WeatherContainer = () => {
                 onClick={onClick}
                 addFavourite={addFavourite}
             />
-            {displayFavourites != null ? (<DisplayFavouite displayFavourites1={displayFavourites} />) : null}
+            {displayFavourites != null ? (<DisplayFavourite displayFavourites1={displayFavourites} />) : null}
             <City cities={cities} />
         </div>
     );

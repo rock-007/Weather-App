@@ -1,4 +1,4 @@
-import UK from "../Components/UK.png";
+import UK from "./UK.png";
 
 const DisplayFavourite = ({ displayFavourites1 }) => {
 

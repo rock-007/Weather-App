@@ -3,7 +3,7 @@ import './NavBar.css';
 import {useState} from "react";
 import {postFavourite} from "../services/FavouriteService";
 import {addFavourite} from "../Containers/WeatherContainer";
-import CCBC from "../Components/CCBC.png";
+import CCBC from "./CCBC.png";
 const SearchForm = ({onCitySubmit, addFavourite, onClick}) => {
 const [search, setSearch]= useState()
 

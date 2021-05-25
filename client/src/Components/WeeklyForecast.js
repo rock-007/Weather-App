@@ -7,11 +7,11 @@ const WeeklyForecast = ({main, wind, clouds, rain, day}) => {
 
         let rainCount = getRainCount(rain)
         if (clouds.all > 40 && rainCount > 4) {
-            return <WiDayShowers className="icon" />
+            return <WiDayShowers className="icon" color="#ffffff"/>
         } else if (clouds.all < 40) {
-            return <WiDaySunny className="icon" />
+            return <WiDaySunny className="icon" color="#ffffff"/>
         } else {
-            return <WiDayCloudy className="icon" />
+            return <WiDayCloudy className="icon" color="#ffffff"/>
         }
     }
 
@@ -37,21 +37,21 @@ const WeeklyForecast = ({main, wind, clouds, rain, day}) => {
                     {displayClouds(clouds, rain)}
                 </div>
                 <div id="temperature">
-                    <WiThermometer className="icon" /> 
+                    <WiThermometer className="icon" color="	#ffffff"/> 
                     <div id="min-max-temp">
                     Max: {(main.temp_max - 273.15).toFixed(0)} ℃ <br /> Min: {(main.temp_min - 273.15).toFixed(0)} ℃
                     </div>
                 </div>
                 <div id="wind">
-                    <WiStrongWind className="icon" /> 
-                    <div>
+                    <WiStrongWind className="icon" color="	#ffffff"/> 
+                    <div id="wind-number">
                     {(wind["speed"] * 2.2369).toFixed(0)} mph
                     </div>
                 </div>
 
                 <div id="rain">
-                    <WiRain className="icon" />
-                    <div>
+                    <WiRain className="icon" color="#ffffff" />
+                    <div id="rain-number">
                     {`${getRainCount(rain)} mm`}
                     </div>
                 </div>
