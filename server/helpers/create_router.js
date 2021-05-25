@@ -16,6 +16,7 @@ const createRouter = function (collection) {
       });
   });
 
+<<<<<<< HEAD
   router.post("/", (req, res) => {
     const newData = req.body;
     console.log("xxxxxxxxx");
@@ -32,6 +33,21 @@ const createRouter = function (collection) {
         res.json({ status: 400, error: err });
       });
   });
+=======
+    router.post("/", (req, res) => {
+        const newData = req.body;
+        collection
+            .insertOne(newData)
+            .then((result) => {
+                res.json(result.ops[0]);
+            })
+            .catch((err) => {
+                console.error(err);
+                res.status(400);
+                res.json({ status: 400, error: err });
+            });
+    });
+>>>>>>> f3f46f8942e1f455529e83c9fa83ee04862ec39c
 
   router.put("/:id", (req, res) => {
     const id = req.params.id;

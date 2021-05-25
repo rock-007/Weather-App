@@ -7,6 +7,7 @@ export const getFavourites = () => {
 };
 
 export const postFavourite = (favouriteCity) => {
+<<<<<<< HEAD
   console.log(favouriteCity);
   return fetch(baseURL, {
     method: "POST",
@@ -16,6 +17,16 @@ export const postFavourite = (favouriteCity) => {
       // "Access-Control-Allow-Origin": "*",
     },
   }).then((res) => res);
+=======
+    return fetch(baseURL, {
+        method: "POST",
+        body: JSON.stringify({ name: favouriteCity }),
+        headers: {
+            "Content-Type": "application/json",
+            // "Access-Control-Allow-Origin": "*",
+        },
+    }).then((res) => res);
+>>>>>>> f3f46f8942e1f455529e83c9fa83ee04862ec39c
 };
 
 export const deleteFavourite = (city) => {
@@ -25,4 +36,4 @@ export const deleteFavourite = (city) => {
 };
 // };
 
-// // export default FavouriteService;
+
