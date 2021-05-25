@@ -17,9 +17,9 @@ const WeeklyForecast = ({main, wind, clouds, rain, day}) => {
     let getRainCount = function (rain) {
         let rainCount = 0
         for (let rainNumber in rain)
-            if (rainNumber == '3h')
+            if (rainNumber === '3h')
                 rainCount = rain['3h']
-            else if (rainNumber == '1h')
+            else if (rainNumber === '1h')
                 rainCount = rain['1h']
         return rainCount
     }
@@ -27,33 +27,33 @@ const WeeklyForecast = ({main, wind, clouds, rain, day}) => {
     return (
         <div id="day-forecast">
             <h4 id="day-number"> {
-                day == 0 ? 'Today'
-                    : day == 1 ? 'Tomorrow'
+                day === 0 ? 'Today'
+                    : day === 1 ? 'Tomorrow'
                         : `Day ${day + 1}`}
             </h4>
             <ul id="details-list">
-                <li id= "sunny-cloudy">
+                <div id= "sunny-cloudy">
                     {displayClouds(clouds, rain)}
-                </li>
-                <li id="temperature">
+                </div>
+                <div id="temperature">
                     <WiThermometer class="icon" /> 
-                    <li id="min-max-temp">
+                    <div id="min-max-temp">
                     Max: {(main.temp_max - 273.15).toFixed(0)} ℃ <br /> Min: {(main.temp_min - 273.15).toFixed(0)} ℃
-                    </li>
-                </li>
-                <li id="wind">
+                    </div>
+                </div>
+                <div id="wind">
                     <WiStrongWind class="icon" /> 
-                    <li>
+                    <div>
                     {(wind["speed"] * 2.2369).toFixed(0)} mph
-                    </li>
-                </li>
+                    </div>
+                </div>
 
-                <li id="rain">
+                <div id="rain">
                     <WiRain class="icon" />
-                    <li>
+                    <div>
                     {`${getRainCount(rain)} mm`}
-                    </li>
-                </li>
+                    </div>
+                </div>
             </ul>
         </div>
     );
