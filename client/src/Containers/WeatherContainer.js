@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import City from "../Components/City";
 import SearchForm from "../Components/SearchForm";
 import DisplayFavouite from "../Components/DisplayFavouite";
-import SelectedDayForecast from "..Components/SelectedDayForecast";
 import {
     getFavourites,
     postFavourite,
     deleteFavourite,
 } from "../services/FavouriteService";
+
 
 const WeatherContainer = () => {
     const [cities, setCities] = useState([]);
@@ -92,10 +92,7 @@ const WeatherContainer = () => {
                 onClick={onClick}
                 addFavourite={addFavourite}
             />
-            {displayFavourites != null ? (
-                <DisplayFavouite displayFavourites1={displayFavourites} />
-            ) : null}
-
+            {displayFavourites != null ? (<DisplayFavouite displayFavourites1={displayFavourites} />) : null}
             <City cities={cities} />
         </div>
     );

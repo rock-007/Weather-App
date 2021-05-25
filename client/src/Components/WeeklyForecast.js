@@ -1,4 +1,5 @@
 import {WiThermometer, WiStrongWind, WiDaySunny, WiRain, WiDayShowers, WiDayCloudy} from "react-icons/wi";
+import './WeekForecast.css';
 
 const WeeklyForecast = ({main, wind, clouds, rain, day}) => {
 
@@ -25,9 +26,9 @@ const WeeklyForecast = ({main, wind, clouds, rain, day}) => {
     }
 
     return (
-        <div id="day-forecast">
-            <h4 id="day-number"> {
-                day === 0 ? 'Today'
+        <div id={`day-${day}`}>
+            <h4 id ="day-number"> 
+                {day === 0 ? 'Today'
                     : day === 1 ? 'Tomorrow'
                         : `Day ${day + 1}`}
             </h4>

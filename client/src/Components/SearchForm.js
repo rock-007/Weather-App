@@ -3,6 +3,7 @@ import './NavBar.css';
 import {useState} from "react";
 import {postFavourite} from "../services/FavouriteService";
 import {addFavourite} from "../Containers/WeatherContainer";
+import CCBC from "../Components/CCBC.png";
 const SearchForm = ({onCitySubmit, addFavourite, onClick}) => {
 const [search, setSearch]= useState()
 
@@ -23,7 +24,10 @@ const [search, setSearch]= useState()
     }
     return (
         <div id="form-wrapper" className="nav-bar">
-        <h1 id="header">Weather</h1>
+            <div id="header-left">
+                <img id ="image-2"src={CCBC} alt="No image found" width="200"/>
+                <h1 id="header">Weather</h1>
+            </div>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"

@@ -1,6 +1,7 @@
 import WeeklyForecast from "./WeeklyForecast";
-import "./City.css";
+import "./WeekForecast.css";
 import DailyChart from "../Containers/DailyChart";
+
 
 const City = ({ cities }) => {
     if (cities.length === 0) {

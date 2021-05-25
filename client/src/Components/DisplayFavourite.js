@@ -9,7 +9,7 @@ const DisplayFavourite = ({ displayFavourites1 }) => {
         <div>
             {display}
             <img id ="image-1"src={UK} alt="No image found" width="200"/>
-        </div>
+        </div>;
     );
 };
 

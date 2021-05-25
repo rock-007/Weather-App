@@ -80,7 +80,7 @@ const DailyChart = function ({ daily }) {
     return (
         <>
             {" "}
-            <div>
+            <div id="daily-chart">
                 {weatherIcon(daily)}
                 {windIcon(daily)}
                 <Line data={chartData} options={options} />
