@@ -20,33 +20,44 @@ const FavouriteCity = ({eachCity, deleteFavourite}) => {
 
     return (
         <>
-            <div className="details-list2">
-                {/* <li>{" "}</li> */}
-                <li id="fav-city-name">{eachCity["name"]}</li>
-                <div id="sun-temperature">
-                    <li id="fav-sunny-cloudy">
-                        {displayClouds(eachCity["clouds"]["all"])}{" "}
-                    </li>
-                    {/* <li>{" "}</li> */}
-                    <div id="fav-temperature">
-                        <WiThermometer class="icon" />
-                        <div id="min-max-temp">
-                            Max: {(eachCity["main"]["temp_max"] - 273.15).toFixed(0)} ℃ <br />{" "}
-                            Min: {(eachCity["main"]["temp_max"] - 273.15).toFixed(0)} ℃
+            <ul class="details-list2">
+                <li>
+                    {" "}
+                    {/* <div style={{ position: "absolute", alignItems: "center" }}>
+            <p>X</p>
+          </div> */}
+                </li>
+
+                <li>{eachCity["name"]}</li>
+
+                <div id="sunny-cloudy">
+                    <li>{displayClouds(eachCity["clouds"]["all"])} </li>
+                    <li>
+                        {" "}
+                        <div id="temperature">
+                            <WiThermometer class="icon" />
+                            <div id="min-max-temp">
+                                Max:{" "}
+                                {(
+                                    eachCity["main"]["temp_max"] - 273.15
+                                ).toFixed(0)}{" "}
+                                ℃ <br /> Min:{" "}
+                                {(
+                                    eachCity["main"]["temp_max"] - 273.15
+                                ).toFixed(0)}{" "}
+                                ℃
+                            </div>
                         </div>
-                    </div>
-                    <div id="delete-button">
+                    </li>
                     <input
-                        id="delete-button"
                         type="submit"
-                        value="Delete" a
+                        value="Delete"
                         onClick={() => {
                             handleDelete(eachCity["name"]);
                         }}
                     />
-                    </div>
                 </div>
-            </div>
+            </ul>
         </>
     );
 };

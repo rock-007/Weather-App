@@ -3,12 +3,12 @@ db.dropDatabase();
 
 db.favourites.insertMany([
     {
-    name:"London"
+    name:"london"
     },
     {
-      name:"Edinburgh"
+      name:"edinburgh"
     },
     {
-      name:"Glasgow"
+      name:"glasgow"
     }
   ]);
