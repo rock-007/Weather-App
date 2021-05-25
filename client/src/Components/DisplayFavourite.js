@@ -2,10 +2,8 @@ import FavouriteCity from "./FavouriteCity";
 import UK from "./UK.png";
 
 const DisplayFavourite = ({ displayFavourites1, deleteFavourite2 }) => {
-  console.log(displayFavourites1);
 
   const deleteFavourite1 = (city) => {
-    console.log("7", city);
     deleteFavourite2(city);
   };
 
@@ -21,27 +19,14 @@ const DisplayFavourite = ({ displayFavourites1, deleteFavourite2 }) => {
   return (
     <>
       {" "}
+      <div>
+      </div>
       <div className="fav-forecast">{display}</div>
-      <img id ="image-1"src={UK} alt="No image found" width="200"/>
+      <div className="britain">
+        <img id ="image-britain"src={UK} alt="No image found" width="200"/>
+      </div>
     </>
   );
 };
 
 export default DisplayFavourite;
-
-// import UK from "../Components/UK.png";
-
-// const DisplayFavourite = ({ displayFavourites1 }) => {
-
-//     const display = displayFavourites1.map((eachFavourite) => {
-//         return <p>{eachFavourite["name"]}</p>;
-//     });
-//     return (
-//         <div>
-//             {display}
-//             <img id ="image-1"src={UK} alt="No image found" width="200"/>
-//         </div>
-//     );
-// };
-
-// export default DisplayFavourite;

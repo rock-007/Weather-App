@@ -65,6 +65,11 @@
     cursor: pointer;
     border: 1px solid black;
     border-color: #e7e7e7;
-    color: white;
-    
+    color: white;   
+}
+
+.britain {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }

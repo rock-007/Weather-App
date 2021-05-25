@@ -1,26 +1,20 @@
 import "./FavouriteCity.css";
 import {
     WiThermometer,
-    WiStrongWind,
     WiDaySunny,
-    WiRain,
-    WiDayShowers,
     WiDayCloudy,
 } from "react-icons/wi";
 
 const FavouriteCity = ({eachCity, deleteFavourite}) => {
     let displayClouds = function (clouds) {
-        console.log(clouds);
         if (clouds > 41) {
             return <WiDayCloudy class="icon" />;
         } else if (clouds <= 41) {
             return <WiDaySunny class="icon" />;
         }
     };
-    console.log("ddf", eachCity);
 
     const handleDelete = (cityName) => {
-        console.log("55", cityName);
         deleteFavourite(cityName);
     };
 
