@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const path = require();
+const path = require("path");
 
 const cors = require("cors");
 app.use(cors());
@@ -12,7 +12,10 @@ app.use(express.json());
 const MongoClient = require("mongodb").MongoClient;
 const createRouter = require("./helpers/create_router.js");
 
-MongoClient.connect("mongodb://localhost:27017")
+const mongoCloud = require("./config/keys").mongoURI;
+//MongoClient.connect("mongodb://localhost:27017")
+
+MongoClient.connect(mongoCloud)
     .then((client) => {
         const db = client.db("weather");
         const favouritesCollection = db.collection("favourites");
