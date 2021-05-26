@@ -1,31 +1,23 @@
 .fav-forecast {
-<<<<<<< HEAD
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  flex: 66.66%;
-=======
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    flex-direction: row;
-    width: 50%;
-
+  flex-direction: row;
+  width: 50%;
 }
 
 .britain {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    width: 50%;
-    height: fit-content;
-    margin: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 50%;
+  height: fit-content;
+  margin: 50px;
 }
 
 #flex-grid {
-    display: flex;
-    justify-content: space-between;
->>>>>>> 7687bf399d841b4cb954dfc0e5554989cc58801c
+  display: flex;
+  justify-content: space-between;
 }
 
 .details-list2 {
@@ -41,6 +33,24 @@
   margin-bottom: 30px;
   padding: 20px;
   color: white;
+  border-radius: 25px;
+}
+
+#city-name {
+  /* flex: 100%;
+  align-content: center;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 500; */
+  /* margin: 20px; */
+  width: 50%;
+  /* overflow:hidden; */
+  /* height:1em; */
+  /* padding: 10px; */
+  background-color: #2d3142;
+  color: white;
+  color: #FFFFFF;
+  border-radius : 14px;
 }
 
 .icon {
@@ -90,4 +100,3 @@
   border-color: #e7e7e7;
   color: white;
 }
-
