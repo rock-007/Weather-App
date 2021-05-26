@@ -29,11 +29,11 @@ const WeeklyForecast = ({main, wind, clouds, rain, day}) => {
     return (
         <div id={`day-${day}`}>
         <div id="day-name-sun-img" >
-            <p id ="day-number"> 
+            <h1 id ="day-number"> 
                 {day === 0 ? 'Today'
                     : day === 1 ? 'Tomorrow'
                         : `Day ${day + 1}`}
-            </p>
+            </h1>
             <div id= "sunny-cloudy">
                 {displayClouds(clouds, rain)}
             </div>
