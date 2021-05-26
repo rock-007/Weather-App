@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
-const cors = require("cors");
-app.use(cors());
+// const cors = require("cors");
+// app.use(cors());
 
 const bodyParser = require("body-parser");
 
