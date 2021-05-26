@@ -93,8 +93,11 @@ const WeatherContainer = () => {
   const deleteFav = (city) => {
     console.log(city);
     // delete and rerender
+
+    const result = favourites.filter((eachCity) => eachCity["nameok "] != city);
+    console.log("98", result);
     deleteFavourite(city).then(() => {
-      setFavourites(favourites.filter((eachCity) => eachCity != city));
+      setFavourites(result);
     });
   };
 
