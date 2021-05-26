@@ -1,8 +1,6 @@
 import "./SearchForm.css";
 import "./NavBar.css";
 import { useState } from "react";
-import { postFavourite } from "../services/FavouriteService";
-import { addFavourite } from "../Containers/WeatherContainer";
 import CCBC from "../Components/CCBC.png";
 const SearchForm = ({ onCitySubmit, addFavourite, onClick }) => {
     const [search, setSearch] = useState();
@@ -37,44 +35,18 @@ const SearchForm = ({ onCitySubmit, addFavourite, onClick }) => {
                 >
                     Search
                 </button>
+                     
                 <input
                     onClick={() => {
                         setSearch(2);
                     }}
                     type="submit"
-                    value="Add to Favourites"
+                    value="Add"
                     id="save"
                 />
             </form>
         </div>
     );
 };
-
-// return (
-//   <div id="form-wrapper" className="nav-bar">
-//     <h1 id="header">Weather</h1>
-//     <form onSubmit={handleSubmit}>
-//       <input type="text" name="city" id="city" placeholder="City" />
-//       <button
-//         id="search-button"
-//         type="submit"
-//         onClick={() => {
-//           setSearch(1);
-//         }}
-//       >
-//         Search
-//       </button>
-//       <input
-//         onClick={() => {
-//           setSearch(2);
-//         }}
-//         type="submit"
-//         value="Add to Favourites"
-//         id="save"
-//       />
-//     </form>
-//   </div>
-// );
-// };
 
 export default SearchForm;
