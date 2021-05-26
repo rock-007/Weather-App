@@ -1,8 +1,31 @@
 .fav-forecast {
+<<<<<<< HEAD
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   flex: 66.66%;
+=======
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 50%;
+
+}
+
+.britain {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 50%;
+    height: fit-content;
+    margin: 50px;
+}
+
+#flex-grid {
+    display: flex;
+    justify-content: space-between;
+>>>>>>> 7687bf399d841b4cb954dfc0e5554989cc58801c
 }
 
 .details-list2 {
@@ -68,8 +91,3 @@
   color: white;
 }
 
-.britain {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}

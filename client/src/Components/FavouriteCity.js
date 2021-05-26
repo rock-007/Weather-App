@@ -32,6 +32,7 @@ const FavouriteCity = ({ eachCity, deleteFavourite, favouriteforcast }) => {
                     <li id="fav-sunny-cloudy">
                         {displayClouds(eachCity["clouds"]["all"])}{" "}
                     </li>
+                    <li>{" "}</li>
                     <div id="fav-temperature">
                         <WiThermometer class="icon" />
                         <div id="min-max-temp">

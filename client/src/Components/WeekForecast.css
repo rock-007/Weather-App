@@ -1,4 +1,5 @@
 .city-card {
+<<<<<<< HEAD
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -21,7 +22,31 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+=======
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 50px;
+    width: 100%;
+>>>>>>> 7687bf399d841b4cb954dfc0e5554989cc58801c
 }
+
+#day-0 {
+    flex-basis: 50%;
+    box-shadow: 5px 10px 8px #888888;
+    background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+    margin: 30px;
+    padding: 30px;
+    justify-content: center;
+    /* width: 400px;
+    height: 400px; */
+    font-size: 1.5vw;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
 
 #day-1,
 #day-2,
@@ -37,9 +62,15 @@
   color: white;
   display: flex;
   flex-wrap: wrap;
+<<<<<<< HEAD
   justify-content: space-evenly;
   align-items: center;
 }
+=======
+  justify-content: space-around;
+  align-items: center;
+} 
+>>>>>>> 7687bf399d841b4cb954dfc0e5554989cc58801c
 
 #details-list {
   flex-wrap: wrap;
@@ -74,11 +105,20 @@ ul {
 }
 
 #day-0 > #day-number {
+<<<<<<< HEAD
   margin-top: auto;
   margin-bottom: 10px;
   padding: 10px;
   text-align: center;
   font-size: 80px;
+=======
+    margin-top: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 80px;
+ 
+>>>>>>> 7687bf399d841b4cb954dfc0e5554989cc58801c
 }
 
 li {
@@ -91,6 +131,7 @@ li {
 }
 
 #sunny-cloudy > .icon {
+<<<<<<< HEAD
   font-size: 150px;
   justify-content: center;
 }
@@ -98,6 +139,16 @@ li {
 #Layer-1.city-card {
   justify-content: center;
   font-size: 350px;
+=======
+    font-size: 150px;
+    justify-content: center;
+    
+}
+
+#Layer-1.city-card {
+    justify-content: center;
+    font-size: 350px;
+>>>>>>> 7687bf399d841b4cb954dfc0e5554989cc58801c
 }
 
 #temperature,

@@ -24,8 +24,8 @@ const DisplayFavourite = ({
     });
     return (
         <>
+            <div id="flex-grid">
             {" "}
-            <div></div>
             <div className="fav-forecast">{display}</div>
             <div className="britain">
                 <img
@@ -34,6 +34,7 @@ const DisplayFavourite = ({
                     alt="No image found"
                     width="200"
                 />
+            </div>
             </div>
         </>
     );
