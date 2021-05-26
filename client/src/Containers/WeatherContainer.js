@@ -21,7 +21,7 @@ const WeatherContainer = () => {
     }, [selectedCity]);
 
     useEffect(() => {
-        getFavourite();
+        getFavourite(); // this will help to render the fav on the start of the app
     }, []);
 
     useEffect(() => {
@@ -63,10 +63,7 @@ const WeatherContainer = () => {
                 );
             })
             .then((result) =>
-                setCities([
-                    ...cities,
-                    { daily: result[0], forecast: result[1] },
-                ])
+                setCities([{ daily: result[0], forecast: result[1] }])
             );
     };
 
@@ -107,6 +104,10 @@ const WeatherContainer = () => {
         });
     };
 
+    const favForcast = (favCity) => {
+        setSelectedCity(favCity);
+    };
+
     return (
         <div>
             <SearchForm
@@ -119,6 +120,7 @@ const WeatherContainer = () => {
                 <DisplayFavourite
                     displayFavourites1={displayFavourites}
                     deleteFavourite2={deleteFav}
+                    favouriteforcast2={favForcast}
                 />
             ) : null}
             {selectedCity != null ? <City cities={cities} /> : null}
