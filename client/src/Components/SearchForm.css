@@ -7,7 +7,6 @@
   margin: 0px;
 }
 
-
 #search-button {
   width: 200px;
   padding: 5px;
@@ -16,7 +15,6 @@
   background-color: #ef8354;
   margin-left: 10px;
 }
-
 
 #save {
   width: 200px;
@@ -29,24 +27,24 @@
 }
 
 form {
-    display: flex;
-    justify-content: flex-end;
-    border: 1px;
-    background-color: transparent;
-    height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  border: 1px;
+  background-color: transparent;
+  height: 40px;
 }
 
-::placeholder {
+/* ::placeholder {
     color: #2d3142;
     font-style: italic;
-}
+} */
 
 #city {
-    width: 350px;
-    display: flex;
-    margin-right: 10px;
+  width: 350px;
+  display: flex;
+  margin-right: 10px;
 }
 
-input{
-    font-size: 25px;
+input {
+  font-size: 25px;
 }

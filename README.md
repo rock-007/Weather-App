@@ -6,8 +6,7 @@ A user should be able to:
 
 - view information on the weather forecast for a particular city in the UK
 - be able to interact with the page to submit a city to tailor the information displayed to that city
-- be able to display the information retreived in a graphical format e.g. a chart
-- recommend possible activities and/or clothing depending on the weather forecast
+- be able to display the information retrieved in a graphical format e.g. a chart
 
 ## Possible Extensions
 - Use a map to display the weather forecast.
