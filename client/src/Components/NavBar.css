@@ -10,6 +10,7 @@ div > h1{
 
 #header-left {
   display: flex;
+  flex-wrap: wrap;
   justify-content: left;
   align-items: center;
   margin: 20px;

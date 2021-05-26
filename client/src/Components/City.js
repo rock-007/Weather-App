@@ -3,10 +3,7 @@ import "./WeekForecast.css";
 import DailyChart from "../Containers/DailyChart";
 
 const City = ({ cities }) => {
-  // const eachCity = cities.map((city, index) => {
-  //     console.log(city);
-  //     return <DailyForcast city={city.daily} key={index} />;
-  // });
+
   const cityforecast = cities.map((city) => {
     console.log(city.forecast);
 
