@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import City from "../Components/City";
 import SearchForm from "../Components/SearchForm";
-import DisplayFavouite from "../Components/DisplayFavouite";
+import DisplayFavourite from "../Components/DisplayFavourite";
 import {
   getFavourites,
   postFavourite,
@@ -31,7 +31,7 @@ const WeatherContainer = () => {
   }, [favourites]);
 
   const getFavouriteCities = function (favourites) {
-    console.log(favourites[0][0]["name"]);
+    console.log(favourites[0]);
     let favouiteFetch = favourites[0].map((eachCity) => {
       return fetch(
         `http://api.openweathermap.org/data/2.5/weather?q=${eachCity["name"]}&appid=3031aac4ff517ddfc83b94a403d374b0`
@@ -91,13 +91,16 @@ const WeatherContainer = () => {
     postFavourite(favouriteCity).then(() => getFavourite());
   };
   const deleteFav = (city) => {
-    console.log(city);
+    console.log(favourites[0]);
     // delete and rerender
 
-    const result = favourites.filter((eachCity) => eachCity["nameok "] != city);
-    console.log("98", result);
+    const result = favourites[0].filter(
+      (eachCity) => eachCity["name"].toLowerCase() !== city.toLowerCase()
+    );
+    console.log(result);
+
     deleteFavourite(city).then(() => {
-      setFavourites(result);
+      setFavourites([result]);
     });
   };
 
@@ -110,7 +113,7 @@ const WeatherContainer = () => {
         addFavourite={addFavourite}
       />
       {displayFavourites != null ? (
-        <DisplayFavouite
+        <DisplayFavourite
           displayFavourites1={displayFavourites}
           deleteFavourite2={deleteFav}
         />
