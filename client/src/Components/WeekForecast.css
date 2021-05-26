@@ -8,15 +8,14 @@
 }
 
 #day-0 {
-    flex-basis: 50%;
+    flex-basis: 40%;
     box-shadow: 5px 10px 8px #888888;
     background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
     margin: 30px;
     padding: 30px;
     justify-content: center;
-    /* width: 400px;
-    height: 400px; */
-    font-size: 1.5vw;
+    width: min-content;
+    /* height: 400px; */
     color: white;
     display: flex;
     flex-wrap: wrap;
@@ -66,7 +65,6 @@ ul {
 }
 
 #day-number {
-  margin-top: auto;
   margin-bottom: 10px;
   padding: 10px;
   text-align: center;
@@ -74,11 +72,11 @@ ul {
 }
 
 #day-0 > #day-number {
-    margin-top: auto;
     margin-bottom: 10px;
     padding: 10px;
     text-align: center;
     font-size: 80px;
+    justify-content: center;
  
 }
 
@@ -115,3 +113,7 @@ li {
     width: 100px;
 
 }
+
+/* #day-0 > #temperature, #wind, #rain, #min-max-temp, #wind-number, #rain-number{
+    font-size: 20px;
+} */
