@@ -1,6 +1,8 @@
 #form-wrapper {
   width: 100%;
+  height: fit-content;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   background-color: #2d3142;
@@ -27,16 +29,18 @@
 
 form {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   border: 1px;
   background-color: transparent;
   height: 40px;
+  height: fit-content;
 }
 
-/* ::placeholder {
+::placeholder {
     color: #2d3142;
     font-style: italic;
-} */
+}
 
 #city {
   width: 350px;
