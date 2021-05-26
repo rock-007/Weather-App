@@ -116,7 +116,7 @@ const WeatherContainer = () => {
                 onClick={onClick}
                 addFavourite={addFavourite}
             />
-            
+
             {displayFavourites != null ? (
                 <DisplayFavourite
                     displayFavourites1={displayFavourites}

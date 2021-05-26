@@ -4,7 +4,7 @@ import {
     Marker,
     InfoWindow,
 } from "@react-google-maps/api";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const UkMap = ({ cities }) => {
     const libraries = ["places"];
@@ -13,10 +13,14 @@ const UkMap = ({ cities }) => {
         googleMapsApiKey: process.env.React_APP_Google_MAPS_API_KEY,
         libraries,
     });
-
+    // console.log(cities[0] === Object);
+    console.log("xxx", cities);
+    useEffect(() => {
+        mapFunction();
+    }, []);
     const options = {};
-
     const mapFunction = (lat1 = 53.472225, lng1 = -2.293502, zoom1 = 8) => {
+        console.log("33");
         let center = {
             lat: lat1,
             lng: lng1,
@@ -39,7 +43,6 @@ const UkMap = ({ cities }) => {
             />
         );
     };
-
     let result = cities.map((eachCity) => {
         console.log("city", eachCity["forecast"]["city"]["coord"]["lon"]);
         const lat1 = eachCity["forecast"]["city"]["coord"]["lat"];
@@ -49,9 +52,17 @@ const UkMap = ({ cities }) => {
         return mapFunction(lat1, lng1, zoom1);
     });
 
+    const defaultMap = mapFunction();
+
     return (
         <>
-            <div id="map">{cities !== [] ? result : mapFunction}</div>
+            <div id="map">
+                {isLoaded == true
+                    ? typeof cities[0] === "undefined"
+                        ? mapFunction(1, 1, 1)
+                        : result
+                    : null}
+            </div>
         </>
     );
 };
