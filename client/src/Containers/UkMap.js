@@ -19,7 +19,7 @@ const UkMap = ({ cities }) => {
         mapFunction();
     }, []);
     const options = {};
-    const mapFunction = (lat1 = 53.472225, lng1 = -2.293502, zoom1 = 8) => {
+    const mapFunction = (lat1 = 53.472225, lng1 = -2.293502, zoom1 = 6) => {
         console.log("33");
         let center = {
             lat: lat1,
@@ -59,7 +59,7 @@ const UkMap = ({ cities }) => {
             <div id="map">
                 {isLoaded == true
                     ? typeof cities[0] === "undefined"
-                        ? mapFunction(1, 1, 1)
+                        ? mapFunction()
                         : result
                     : null}
             </div>
