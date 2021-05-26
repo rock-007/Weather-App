@@ -21,11 +21,13 @@ const FavouriteCity = ({eachCity, deleteFavourite}) => {
     return (
         <>
             <div className="details-list2">
+                <li>{" "}</li>
                 <li id="fav-city-name">{eachCity["name"]}</li>
                 <div id="sun-temperature">
                     <li id="fav-sunny-cloudy">
                         {displayClouds(eachCity["clouds"]["all"])}{" "}
                     </li>
+                    <li>{" "}</li>
                     <div id="fav-temperature">
                         <WiThermometer class="icon" />
                         <div id="min-max-temp">

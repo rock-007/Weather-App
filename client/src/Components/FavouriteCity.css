@@ -1,8 +1,24 @@
 .fav-forecast {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 50%;
 
+}
+
+.britain {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 50%;
+    height: fit-content;
+    margin: 50px;
+}
+
+#flex-grid {
+    display: flex;
+    justify-content: space-between;
 }
 
 .details-list2 {
@@ -68,8 +84,3 @@
     color: white;   
 }
 
-.britain {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-}

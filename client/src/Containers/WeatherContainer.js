@@ -64,7 +64,6 @@ const WeatherContainer = () => {
             })
             .then((result) =>
                 setCities([
-                    ...cities,
                     { daily: result[0], forecast: result[1] },
                 ])
             );

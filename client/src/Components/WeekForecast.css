@@ -4,7 +4,24 @@
     justify-content: space-between;
     list-style-type: none;
     margin: 50px;
+    width: 100%;
 }
+
+#day-0 {
+    flex-basis: 50%;
+    box-shadow: 5px 10px 8px #888888;
+    background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+    margin: 30px;
+    padding: 30px;
+    justify-content: center;
+    /* width: 400px;
+    height: 400px; */
+    font-size: 1.5vw;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
 
 #day-1,
 #day-2,
@@ -18,23 +35,11 @@
   box-shadow: 5px 10px 8px #888888;
   background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
   color: white;
-}
-
-#day-0 {
-    flex-basis: 50%;
-    box-shadow: 5px 10px 8px #888888;
-	background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-    margin: 30px;
-	padding: 30px;
-    justify-content: center;
-    color: white;
-}
-
-#daily-chart {
-    flex-basis: 50%;
-    width: 50%;
-    margin: 30px;
-}
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+} 
 
 #details-list {
   flex-wrap: wrap;
@@ -56,15 +61,6 @@
   margin: 30px;
 }
 
-#day-0 {
-  flex-basis: 40%;
-  box-shadow: 5px 10px 8px #888888;
-  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
-  margin: 30px;
-  padding: 30px;
-  justify-content: center;
-}
-
 ul {
   padding: 0;
 }
@@ -74,7 +70,16 @@ ul {
   margin-bottom: 10px;
   padding: 10px;
   text-align: center;
-  font-size: xx-large;
+  font-size: 30px;
+}
+
+#day-0 > #day-number {
+    margin-top: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 80px;
+ 
 }
 
 li {
@@ -88,12 +93,13 @@ li {
 
 #sunny-cloudy > .icon {
     font-size: 150px;
-    justify-content: center;}
+    justify-content: center;
+    
+}
 
 #Layer-1.city-card {
     justify-content: center;
     font-size: 350px;
-
 }
 
 #temperature,
