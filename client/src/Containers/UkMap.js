@@ -5,6 +5,7 @@ import {
     InfoWindow,
 } from "@react-google-maps/api";
 import React, { useState, useEffect } from "react";
+import MapStyles from '../Components/MapStyles';
 
 const UkMap = ({ cities }) => {
     const libraries = ["places"];
@@ -31,11 +32,13 @@ const UkMap = ({ cities }) => {
             margin: "34px",
             width: "60vw",
             height: "60vh",
+            
         };
 
         return (
             <GoogleMap
                 mapContainerStyle={containerStyle}
+                styles={MapStyles.styles}
                 zoom={zoom1}
                 center={center}
                 options={options}

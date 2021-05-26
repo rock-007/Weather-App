@@ -3,12 +3,14 @@ import City from "../Components/City";
 import SearchForm from "../Components/SearchForm";
 import DisplayFavourite from "../Components/DisplayFavourite";
 import UkMap from "./UkMap";
+import MapStyles from "../Components/MapStyles"
 
 import {
     getFavourites,
     postFavourite,
     deleteFavourite,
 } from "../services/FavouriteService";
+import {GoogleMap} from "@react-google-maps/api";
 
 const WeatherContainer = () => {
     const [cities, setCities] = useState([]);
@@ -126,9 +128,9 @@ const WeatherContainer = () => {
                 />
             ) : null}
 
-            <UkMap cities={cities} />
+            <UkMap cities={cities} styles={MapStyles.styles}/>
             </div>
-
+            
             {selectedCity != null ? <City cities={cities} /> : null}
         </div>
     );
