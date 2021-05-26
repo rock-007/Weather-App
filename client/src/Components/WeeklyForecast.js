@@ -1,5 +1,6 @@
 import {WiThermometer, WiStrongWind, WiDaySunny, WiRain, WiDayShowers, WiDayCloudy} from "react-icons/wi";
 import './WeekForecast.css';
+import './DayZero.css';
 
 const WeeklyForecast = ({main, wind, clouds, rain, day}) => {
 
@@ -27,15 +28,17 @@ const WeeklyForecast = ({main, wind, clouds, rain, day}) => {
 
     return (
         <div id={`day-${day}`}>
-            <h4 id ="day-number"> 
+        <div id="day-name-sun-img" >
+            <p id ="day-number"> 
                 {day === 0 ? 'Today'
                     : day === 1 ? 'Tomorrow'
                         : `Day ${day + 1}`}
-            </h4>
-            <ul id="details-list">
-                <div id= "sunny-cloudy">
-                    {displayClouds(clouds, rain)}
-                </div>
+            </p>
+            <div id= "sunny-cloudy">
+                {displayClouds(clouds, rain)}
+            </div>
+        </div>
+            <div id="details-list">
                 <div id="temperature">
                     <WiThermometer className="icon" color="	#ffffff"/> 
                     <div id="min-max-temp">
@@ -55,7 +58,7 @@ const WeeklyForecast = ({main, wind, clouds, rain, day}) => {
                     {`${getRainCount(rain)} mm`}
                     </div>
                 </div>
-            </ul>
+            </div>
         </div>
     );
 };

@@ -43,6 +43,7 @@ form {
   background-color: transparent;
   height: 40px;
   height: fit-content;
+  margin: 20px;
 }
 
 ::placeholder {

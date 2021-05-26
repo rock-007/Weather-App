@@ -116,7 +116,8 @@ const WeatherContainer = () => {
                 onClick={onClick}
                 addFavourite={addFavourite}
             />
-            
+            <div id="flex-grid">
+
             {displayFavourites != null ? (
                 <DisplayFavourite
                     displayFavourites1={displayFavourites}
@@ -124,7 +125,9 @@ const WeatherContainer = () => {
                     favouriteforcast2={favForcast}
                 />
             ) : null}
+
             <UkMap cities={cities} />
+            </div>
 
             {selectedCity != null ? <City cities={cities} /> : null}
         </div>

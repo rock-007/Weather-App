@@ -1,0 +1,43 @@
+#day-0 {
+    flex-basis: 40%;
+    box-shadow: 5px 10px 8px #888888;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    margin: 30px;
+    padding: 30px;
+    justify-content: center;
+    width: min-content;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 25px;
+    font-size: 20px;
+  }
+#day-0 > #day-number {
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 80px;
+    justify-content: center;
+  }
+
+#day-0 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+#day-name-sun-img {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#details-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+}
