@@ -62,9 +62,7 @@ const WeatherContainer = () => {
           })
         );
       })
-      .then((result) =>
-        setCities([...cities, { daily: result[0], forecast: result[1] }])
-      );
+      .then((result) => setCities([{ daily: result[0], forecast: result[1] }]));
   };
 
   const onCitySubmit = function (city) {
