@@ -1,26 +1,24 @@
 .fav-forecast {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    flex-direction: row;
-    width: 50%;
-    height: min-content;
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 50%;
+  height: min-content;
 }
 
 .britain {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    width: 50%;
-    height: fit-content;
-    margin: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 50%;
+  height: fit-content;
+  margin: 50px;
 }
 
 #flex-grid {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .details-list2 {
@@ -36,6 +34,24 @@
   margin-bottom: 30px;
   padding: 20px;
   color: white;
+  border-radius: 25px;
+}
+
+#city-name {
+  /* flex: 100%;
+  align-content: center;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 500; */
+  /* margin: 20px; */
+  width: 50%;
+  /* overflow:hidden; */
+  /* height:1em; */
+  /* padding: 10px; */
+  background-color: #2d3142;
+  color: white;
+  color: #FFFFFF;
+  border-radius : 14px;
 }
 
 .icon {
@@ -85,4 +101,3 @@
   border-color: #e7e7e7;
   color: white;
 }
-
