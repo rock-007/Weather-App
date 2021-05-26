@@ -37,18 +37,6 @@ const DisplayFavourite = ({
             </div>
         </>
     );
-  });
-  return (
-    <>
-      {" "}
-      <div id="flex-grid">
-      <div className="fav-forecast">{display}</div>
-      <div className="britain">
-        <img id ="image-britain"src={UK} alt="No image found" width="200"/>
-      </div>
-      </div>
-    </>
-  );
 };
 
 export default DisplayFavourite;
