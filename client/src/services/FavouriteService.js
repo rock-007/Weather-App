@@ -11,8 +11,6 @@ export const getFavourites = () => {
         },
     })
         .then((res) => {
-            console.log(res);
-
             return res.json();
         })
         .then((result) => {

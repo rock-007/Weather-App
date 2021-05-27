@@ -16,8 +16,10 @@ const createRouter = function (collection) {
                     return { name: eachDocs["name"] };
                 });
                 console.log("9991", result);
+                let final = JSON.stringify(result);
+                console.log("9991xx", final);
 
-                return res.json(result);
+                return res.send(final);
             })
             .catch((err) => {
                 console.error(err);
