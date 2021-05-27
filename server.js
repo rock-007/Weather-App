@@ -19,6 +19,7 @@ const mongoCloudURI = require("./config/keys").mongoURI;
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true,
 // });
+
 MongoClient.connect(mongoCloudURI, function (err, client) {
         if (err) {
       console.log('Unable to connect to the mongoDB server. Error:', err);
@@ -39,13 +40,13 @@ MongoClient.connect(mongoCloudURI, function (err, client) {
 //       // perform actions on the collection object
 //       client.close()
 
-client.connect((err) => {
-    const collection = client.db("weather").collection("favourites");
-    // perform actions on the collection object
-    const favouritesRouter = createRouter(favouritesCollection);
-    app.use("/api/favourites", favouritesRouter);
-    client.close();
-});
+// client.connect((err) => {
+//     const collection = client.db("weather").collection("favourites");
+//     // perform actions on the collection object
+//     const favouritesRouter = createRouter(favouritesCollection);
+//     app.use("/api/favourites", favouritesRouter);
+//     client.close();
+// });
 // client
 //     .connect(mongoCloud)
 //     .then((client) => {
