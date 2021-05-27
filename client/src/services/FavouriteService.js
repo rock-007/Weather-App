@@ -13,7 +13,7 @@ export const getFavourites = () => {
         .then((res) => {
             console.log(res);
 
-            return res.JSON();
+            return JSON.stringify(res);
         })
         .then((result) => {
             console.log(result);
