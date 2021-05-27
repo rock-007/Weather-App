@@ -12,7 +12,7 @@ export const getFavourites = () => {
         .then((res) => {
             console.log(res);
 
-            return res.json();
+            return res;
         })
         .then((result) => {
             console.log(result);
@@ -30,7 +30,7 @@ export const postFavourite = (favouriteCity) => {
             Accept: "application/json",
             // "Access-Control-Allow-Origin": "*",
         },
-    }).then((res) => JSON.stringify(res));
+    }).then((res) => res);
 };
 
 export const deleteFavourite = (city) => {
