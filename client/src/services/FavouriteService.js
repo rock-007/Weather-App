@@ -13,12 +13,13 @@ export const getFavourites = () => {
         .then((res) => {
             console.log(res);
 
-            return JSON.stringify(res);
+            return res.JSON();
         })
         .then((result) => {
             console.log(result);
             return result;
-        });
+        })
+        .catch((err) => console.log(err));
 };
 
 export const postFavourite = (favouriteCity) => {
