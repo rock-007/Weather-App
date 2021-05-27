@@ -1,4 +1,4 @@
-const baseURL = "http://cbc-weather-app.herokuapp.com/api/favourites";
+const baseURL = "api/favourites";
 // http://lit-taiga-41856.herokuapp.com/
 export const getFavourites = () => {
     return fetch(baseURL, {
