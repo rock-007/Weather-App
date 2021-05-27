@@ -1,7 +1,6 @@
 const baseURL = "/api/favourites/";
 // http://lit-taiga-41856.herokuapp.com/
 export const getFavourites = () => {
-    console.log("ggh", baseURL);
     return fetch(baseURL, {
         method: "GET",
         headers: {
