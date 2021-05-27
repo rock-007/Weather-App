@@ -30,7 +30,7 @@ export const postFavourite = (favouriteCity) => {
             Accept: "application/json",
             // "Access-Control-Allow-Origin": "*",
         },
-    }).then((res) => res);
+    }).then((res) => JSON.stringify(res));
 };
 
 export const deleteFavourite = (city) => {

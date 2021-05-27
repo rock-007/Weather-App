@@ -3,14 +3,14 @@ import City from "../Components/City";
 import SearchForm from "../Components/SearchForm";
 import DisplayFavourite from "../Components/DisplayFavourite";
 import UkMap from "./UkMap";
-import MapStyles from "../Components/MapStyles"
+import MapStyles from "../Components/MapStyles";
 
 import {
     getFavourites,
     postFavourite,
     deleteFavourite,
 } from "../services/FavouriteService";
-import {GoogleMap} from "@react-google-maps/api";
+import { GoogleMap } from "@react-google-maps/api";
 
 const WeatherContainer = () => {
     const [cities, setCities] = useState([]);
@@ -82,7 +82,10 @@ const WeatherContainer = () => {
     };
 
     const getFavourite = () => {
-        getFavourites().then((result) => setFavourites([result]));
+        getFavourites().then((result) => {
+            console.log(result);
+            return setFavourites([result]);
+        });
 
         //setFavourites([...favourites, result]);
     };
@@ -119,18 +122,17 @@ const WeatherContainer = () => {
                 addFavourite={addFavourite}
             />
             <div id="flex-grid">
+                {displayFavourites != null ? (
+                    <DisplayFavourite
+                        displayFavourites1={displayFavourites}
+                        deleteFavourite2={deleteFav}
+                        favouriteforcast2={favForcast}
+                    />
+                ) : null}
 
-            {displayFavourites != null ? (
-                <DisplayFavourite
-                    displayFavourites1={displayFavourites}
-                    deleteFavourite2={deleteFav}
-                    favouriteforcast2={favForcast}
-                />
-            ) : null}
-
-            <UkMap cities={cities} styles={MapStyles.styles}/>
+                <UkMap cities={cities} styles={MapStyles.styles} />
             </div>
-            
+
             {selectedCity != null ? <City cities={cities} /> : null}
         </div>
     );
