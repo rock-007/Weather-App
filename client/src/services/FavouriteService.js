@@ -1,8 +1,12 @@
 const baseURL = "/api/favourites/";
 // http://lit-taiga-41856.herokuapp.com/
 export const getFavourites = () => {
+    console.log("ggh", baseURL);
     return fetch(baseURL)
-        .then((res) => res.json())
+        .then((res) => {
+            console.log(res);
+            return res.json();
+        })
         .then((result) => {
             console.log(result);
             return result;
