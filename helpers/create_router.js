@@ -17,7 +17,7 @@ const createRouter = function (collection) {
                 });
                 console.log("9991", result);
 
-                return res.json(result);
+                return res.json([{"a":"result"}]);
             })
             .catch((err) => {
                 console.error(err);
