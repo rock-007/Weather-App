@@ -8,6 +8,7 @@ const createRouter = function (collection) {
         console.log("yyyyyyyyyyyyyyyyyyyyyy");
         collection
             .find()
+            .toArray()
             .then((docs) => {
                 console.log("9990", docs);
                 return res.json(docs);
