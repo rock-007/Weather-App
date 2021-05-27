@@ -1,4 +1,4 @@
-const baseURL = "/api/favourites/";
+const baseURL = "/api/favourites";
 // http://lit-taiga-41856.herokuapp.com/
 export const getFavourites = () => {
     return fetch(baseURL, {
