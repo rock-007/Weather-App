@@ -21,17 +21,16 @@ const mongoCloudURI = require("./config/keys").mongoURI;
 // });
 
 MongoClient.connect(mongoCloudURI, function (err, client) {
-        if (err) {
-      console.log('Unable to connect to the mongoDB server. Error:', err);
+    if (err) {
+        console.log("Unable to connect to the mongoDB server. Error:", err);
     } else {
-
-        console.log('Connection established to', url);
+        console.log("Connection established to", url);
         db = client.db("weather");
         const favouritesCollection = db.collection("favourites");
         const favouritesRouter = createRouter(favouritesCollection);
         app.use("/api/favourites", favouritesRouter);
     }
-}
+});
 // const MongoClient = require('mongodb').MongoClient;
 //     const uri = "mongodb+srv://umair:Pakistan008@@cluster0.untiw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 //     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
