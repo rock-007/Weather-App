@@ -11,7 +11,13 @@ const createRouter = function (collection) {
             .toArray()
             .then((docs) => {
                 console.log("9990", docs);
-                return res.json(docs);
+                let result = docs.map((eachDocs) => {
+                    console.log(eachDocs);
+                    return { name: eachDocs["name"] };
+                });
+                console.log("9991", result);
+
+                return res.json(result);
             })
             .catch((err) => {
                 console.error(err);
