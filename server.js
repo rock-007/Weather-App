@@ -6,8 +6,6 @@ app.use(express.json());
 // const cors = require("cors");
 // app.use(cors());
 
-
-
 const MongoClient = require("mongodb").MongoClient;
 const createRouter = require("./helpers/create_router.js");
 
@@ -27,6 +25,7 @@ MongoClient.connect(mongoCloudURI, function (err, client) {
         db = client.db("weather");
         const favouritesCollection = db.collection("favourites");
         const favouritesRouter = createRouter(favouritesCollection);
+        console.log("xxxxx", db, favouritesCollection, favouritesRouter);
         app.use("/api/favourites", favouritesRouter);
     }
 });
