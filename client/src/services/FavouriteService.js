@@ -27,6 +27,7 @@ export const postFavourite = (favouriteCity) => {
         body: JSON.stringify({ name: favouriteCity }),
         headers: {
             "Content-Type": "application/json",
+            Accept: "application/json",
             // "Access-Control-Allow-Origin": "*",
         },
     }).then((res) => res);
