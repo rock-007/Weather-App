@@ -3,7 +3,10 @@ const baseURL = "/api/favourites/";
 export const getFavourites = () => {
     return fetch(baseURL)
         .then((res) => res.json())
-        .then((result) => result);
+        .then((result) => {
+            console.log(result);
+            return result;
+        });
 };
 
 export const postFavourite = (favouriteCity) => {

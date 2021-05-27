@@ -12,18 +12,39 @@ app.use(express.json());
 const MongoClient = require("mongodb").MongoClient;
 const createRouter = require("./helpers/create_router.js");
 
-const mongoCloud = require("./config/keys").mongoURI;
+const mongoCloudURI = require("./config/keys").mongoURI;
 //MongoClient.connect("mongodb://localhost:27017")
 
-MongoClient.connect(mongoCloud)
-    .then((client) => {
-        const db = client.db("weather");
-        const favouritesCollection = db.collection("favourites");
-        const favouritesRouter = createRouter(favouritesCollection);
-        app.use("/api/favourites", favouritesRouter);
-    })
+const client = new MongoClient(mongoCloudURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 
-    .catch(console.err);
+// const MongoClient = require('mongodb').MongoClient;
+//     const uri = "mongodb+srv://umair:Pakistan008@@cluster0.untiw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+//     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+//     client.connect(err => {
+//       const collection = client.db("test").collection("devices");
+//       // perform actions on the collection object
+//       client.close()
+
+client.connect((err) => {
+    const collection = client.db("weather").collection("favourites");
+    // perform actions on the collection object
+    const favouritesRouter = createRouter(favouritesCollection);
+    app.use("/api/favourites", favouritesRouter);
+    client.close();
+});
+// client
+//     .connect(mongoCloud)
+//     .then((client) => {
+//         const db = client.db("weather");
+//         const favouritesCollection = db.collection("favourites");
+//         const favouritesRouter = createRouter(favouritesCollection);
+//         app.use("/api/favourites", favouritesRouter);
+//     })
+
+//     .catch(console.err);
 // if the node env is production then set static folder for React(front-end)
 if (process.env.NODE_ENV == "production") {
     //set static folder - build use (it needs to be created before we load the client index.html file )
