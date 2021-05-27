@@ -7,13 +7,14 @@ export const getFavourites = () => {
         headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
+
             // "Access-Control-Allow-Origin": "*",
         },
     })
         .then((res) => {
             console.log(res);
 
-            return res.JSON();
+            return res.json();
         })
         .then((result) => {
             console.log(result);
