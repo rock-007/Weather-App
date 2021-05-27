@@ -6,7 +6,7 @@ export const getFavourites = () => {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json",
+            Accept: "application/json",
 
             // "Access-Control-Allow-Origin": "*",
         },
@@ -19,8 +19,7 @@ export const getFavourites = () => {
         .then((result) => {
             console.log(result);
             return result;
-        })
-        .catch((err) => console.log(err));
+        });
 };
 
 export const postFavourite = (favouriteCity) => {
