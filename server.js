@@ -31,7 +31,7 @@ mongoose.connect(
             console.log("xxxx11x", favouritesRouter);
             console.log("ccx", favourites);
 
-            app.use("/api/favourites", favouritesRouter);
+            app.use("/api/favourites/", favouritesRouter);
         }
     }
 );
