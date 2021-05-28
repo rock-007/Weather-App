@@ -9,13 +9,7 @@ app.use(express.json());
 const mongoose = require("mongoose");
 const createRouter = require("./helpers/create_router.js");
 
-const mongoCloudURI = require("./config/keys").mongoURI;
-//MongoClient.connect("mongodb://localhost:27017")
-console.log("xx", mongoCloudURI);
-// const client = new MongoClient(mongoCloudURI, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-// });
+// const mongoCloudURI = require("./config/keys").mongoURI;
 
 mongoose.connect(
     "mongodb+srv://umair:skyliner@cluster0.untiw.mongodb.net/weather?retryWrites=true&w=majority",
@@ -26,10 +20,7 @@ mongoose.connect(
             console.log("Connection established to", client);
             let collection = client.db;
             let favourites = collection.collection("favourites");
-            // const favouritesCollection = db.collection("favourites");
-            const favouritesRouter = createRouter(favourites);
-            console.log("xxxx11x", favouritesRouter);
-            console.log("ccx", favourites);
+            let favouritesRouter = createRouter(favourites);
 
             app.use("api/favourites", favouritesRouter);
         }
