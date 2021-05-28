@@ -1,7 +1,7 @@
 .city-card {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   list-style-type: none;
   width: 100%;
 
@@ -42,7 +42,7 @@
 }
 
 #daily-chart {
-  flex-basis: 40%;
+  flex-basis: 50%;
   width: 40%;
   margin: 30px;
 }
