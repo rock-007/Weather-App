@@ -19,14 +19,14 @@ const WeatherContainer = () => {
     const [displayFavourites, setDisplayFavourites] = useState(null);
 
     useEffect(() => {
+        getFavourite();
+    }, []);
+
+    useEffect(() => {
         if (selectedCity != null) {
             getCities(selectedCity);
         }
     }, [selectedCity]);
-
-    useEffect(() => {
-        getFavourite();
-    }, []);
 
     useEffect(() => {
         if (favourites !== null) {
@@ -34,6 +34,7 @@ const WeatherContainer = () => {
         }
     }, [favourites]);
 
+    //API call to get the wetherinfo for favourite cities
     const getFavouriteCities = function (favourites) {
         console.log(favourites[0]);
         let favouiteFetch = favourites[0].map((eachCity) => {
@@ -55,6 +56,7 @@ const WeatherContainer = () => {
             .then((result) => setDisplayFavourites(result));
     };
 
+    //API call to get the wetherinfo (forcastApi) for selected city and for temperature graph(cityAPi)
     const getCities = function (selectedCity) {
         const cityApi = `http://pro.openweathermap.org/data/2.5/forecast/hourly?q=${selectedCity}&appid=3031aac4ff517ddfc83b94a403d374b0`;
         const forecastApi = `http://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&appid=1a9a20046a26886e891582ce46507106`;
@@ -71,54 +73,47 @@ const WeatherContainer = () => {
             );
     };
 
+    // Set user selected City - using click on favourite
+    const favForcast = (favCity) => {
+        setSelectedCity(favCity);
+    };
+    //Set user selected City- using form input
     const onCitySubmit = function (city) {
-        console.log(city);
         setSelectedCity(city);
     };
 
-    const onClick = function (favourite) {
-        setFavourites([...favourites, favourite]);
-        console.log(favourites);
-    };
-
+    //API call to get favourites from DB
     const getFavourite = () => {
         getFavourites().then((result) => {
             console.log(result);
             return setFavourites([result]);
         });
-
-        //setFavourites([...favourites, result]);
     };
 
+    //API call to save favourites to DB
     const addFavourite = (favouriteCity) => {
-        // const temp = favourites.map(favourite => favourite);
-        // temp.push(favourite);
-        // setSelectedCity(temp);
         console.log(favouriteCity);
         postFavourite(favouriteCity).then(() => getFavourite());
     };
+
+    //API call to dalete favourites in DB
     const deleteFav = (city) => {
         console.log(favourites[0]);
-        // delete and rerender
 
         const result = favourites[0].filter(
             (eachCity) => eachCity["name"].toLowerCase() !== city.toLowerCase()
         );
-        console.log(result);
 
         deleteFavourite(city).then(() => {
             setFavourites([result]);
         });
     };
-    const favForcast = (favCity) => {
-        setSelectedCity(favCity);
-    };
+
     return (
         <div>
             <SearchForm
                 cities={cities}
                 onCitySubmit={onCitySubmit}
-                onClick={onClick}
                 addFavourite={addFavourite}
             />
             <div id="flex-grid">

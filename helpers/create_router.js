@@ -5,19 +5,14 @@ const createRouter = function (collection) {
     const router = express.Router();
 
     router.get("/", (req, res) => {
-        console.log("yyyyyyyyyyyyyyyyyyyyyy");
         collection
             .find()
             .toArray()
             .then((docs) => {
-                console.log("9990", docs);
                 let result = docs.map((eachDocs) => {
-                    console.log(eachDocs);
                     return { name: eachDocs["name"] };
                 });
-                console.log("9991", result);
                 let final = JSON.stringify(result);
-                console.log("9991xx", final);
 
                 return res.send(final);
             })
