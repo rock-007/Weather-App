@@ -35,17 +35,14 @@ const WeatherContainer = () => {
     }, [favourites]);
 
     const getFavouriteCities = function (favourites) {
-        console.log(favourites[0]);
         let favouiteFetch = favourites[0].map((eachCity) => {
             return fetch(
                 `http://api.openweathermap.org/data/2.5/weather?q=${eachCity["name"]}&appid=3031aac4ff517ddfc83b94a403d374b0`
             );
         });
-        console.log(favouiteFetch);
 
         Promise.all(favouiteFetch)
             .then((res) => {
-                console.log(res);
                 return Promise.all(
                     res.map(function (res) {
                         return res.json();
