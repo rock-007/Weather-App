@@ -1,0 +1,17 @@
+div > h1{
+    margin: 10px;
+    font-size: 60px;
+    color: white;
+}
+
+#image-2 {
+  height: 75px;
+}
+
+#header-left {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+  margin: 20px;
+}
