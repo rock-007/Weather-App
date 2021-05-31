@@ -25,7 +25,7 @@ mongoose.connect(
 if (process.env.NODE_ENV == "production") {
     //set static folder - build use (it needs to be created before we load the client index.html file )
     app.use(express.static("client/build"));
-    app.get("*", (req, res) => {
+    app.use("*", (req, res) => {
         // now load the client index.html file to send to the front end user
         res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
     });
