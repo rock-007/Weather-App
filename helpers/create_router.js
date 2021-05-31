@@ -71,7 +71,7 @@ const createRouter = function (collection) {
                 res.json({ status: 500, error: err });
             });
     });
-
+    console.log("999");
     return router;
 };
 

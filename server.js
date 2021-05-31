@@ -15,6 +15,7 @@ mongoose.connect(
         } else {
             let collection = client.db.collection("favourites");
             let favouritesRouter = createRouter(collection);
+            console.log("api fav xxxx");
 
             app.use("/api/favourites", favouritesRouter);
         }
