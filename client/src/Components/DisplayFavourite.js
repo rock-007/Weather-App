@@ -3,7 +3,7 @@ import FavouriteCity from "./FavouriteCity";
 const DisplayFavourite = ({
     displayFavourites1,
     deleteFavourite2,
-    favouriteforcast2,
+    favourite7DayForcast,
 }) => {
     const deleteFavourite1 = (city) => {
         deleteFavourite2(city);
@@ -17,7 +17,7 @@ const DisplayFavourite = ({
                 eachCity={eachFavourite}
                 key={index}
                 deleteFavourite={deleteFavourite1}
-                favouriteforcast={favouriteforcast1}
+                favourite7DayForcast={favourite7DayForcast}
             />
         );
     });

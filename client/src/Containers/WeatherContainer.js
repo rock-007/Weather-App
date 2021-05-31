@@ -121,7 +121,7 @@ const WeatherContainer = () => {
                     <DisplayFavourite
                         displayFavourites1={displayFavourites}
                         deleteFavourite2={deleteFav}
-                        favouriteforcast2={favForcast}
+                        favourite7DayForcast={favForcast}
                     />
                 ) : null}
 
