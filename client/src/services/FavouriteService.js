@@ -3,7 +3,7 @@ export const getFavourites = () => {
     return fetch(baseURL, {
         method: "GET",
         headers: {
-            "Content-Type": "application/json",
+            // "Content-Type": "application/json",
             Accept: "application/json",
         },
     })
