@@ -8,24 +8,24 @@ const createRouter = require("./helpers/create_router.js");
 // const cors = require("cors");
 // app.use(cors());
 // const mongoCloudURI = require("./config/keys").mongoURI;
+mongoose.connect(
+    "mongodb+srv://umair:skyliner@cluster0.untiw.mongodb.net/weather?retryWrites=true&w=majority",
+    function (err, client) {
+        if (err) {
+        } else {
+            let collection = client.db.collection("favourites");
+            let favouritesRouter = createRouter(collection);
 
-if (process.env.NODE_ENV == "production") {
-    mongoose.connect(
-        "mongodb+srv://umair:skyliner@cluster0.untiw.mongodb.net/weather?retryWrites=true&w=majority",
-        function (err, client) {
-            if (err) {
-            } else {
-                let collection = client.db.collection("favourites");
-                let favouritesRouter = createRouter(collection);
-
-                app.use("/api/favourites/", favouritesRouter);
-            }
+            app.use("/api/favourites", favouritesRouter);
         }
-    );
+    }
+);
+if (process.env.NODE_ENV == "production") {
     //set static folder - build use (it needs to be created before we load the client index.html file )
     app.use(express.static("client/build"));
-    app.use("*", (req, res) => {
+    app.get("*", (req, res) => {
         // now load the client index.html file to send to the front end user
+        console.log("ggh get");
         res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
     });
 }
