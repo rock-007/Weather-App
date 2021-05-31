@@ -9,20 +9,19 @@ const createRouter = require("./helpers/create_router.js");
 // app.use(cors());
 // const mongoCloudURI = require("./config/keys").mongoURI;
 
-mongoose.connect(
-    "mongodb+srv://umair:skyliner@cluster0.untiw.mongodb.net/weather?retryWrites=true&w=majority",
-    function (err, client) {
-        if (err) {
-        } else {
-            let collection = client.db.collection("favourites");
-            let favouritesRouter = createRouter(collection);
-
-            app.use("/api/favourites/", favouritesRouter);
-        }
-    }
-);
-
 if (process.env.NODE_ENV == "production") {
+    mongoose.connect(
+        "mongodb+srv://umair:skyliner@cluster0.untiw.mongodb.net/weather?retryWrites=true&w=majority",
+        function (err, client) {
+            if (err) {
+            } else {
+                let collection = client.db.collection("favourites");
+                let favouritesRouter = createRouter(collection);
+
+                app.use("/api/favourites/", favouritesRouter);
+            }
+        }
+    );
     //set static folder - build use (it needs to be created before we load the client index.html file )
     app.use(express.static("client/build"));
     app.use("*", (req, res) => {
