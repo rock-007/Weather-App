@@ -1,6 +1,6 @@
 const baseURL = "/api/favourites";
 export const getFavourites = () => {
-    return fetch(baseURL, {
+    return fetch("/api/favourites", {
         method: "GET",
         headers: {
             // "Content-Type": "application/json",
