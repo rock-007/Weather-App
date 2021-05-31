@@ -5,7 +5,7 @@ const createRouter = function (collection) {
     const router = express.Router();
 
     router.get("/", (req, res) => {
-        console.log("getxxxxxxx");
+        console.log("get API request");
 
         collection
             .find()
@@ -27,7 +27,7 @@ const createRouter = function (collection) {
 
     router.post("/", (req, res) => {
         const newData = req.body;
-        console.log("xxxxxxxxx");
+        console.log("post api request");
 
         console.log(req.body);
         collection
@@ -71,7 +71,7 @@ const createRouter = function (collection) {
                 res.json({ status: 500, error: err });
             });
     });
-    console.log("999");
+    console.log("API call return statement");
     return router;
 };
 

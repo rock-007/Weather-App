@@ -15,7 +15,8 @@ mongoose.connect(
         } else {
             let collection = client.db.collection("favourites");
             let favouritesRouter = createRouter(collection);
-            console.log("api fav xxxx");
+            console.log(favouritesRouter)
+            console.log("fav api");
 
             app.use("/api/favourites", favouritesRouter);
         }
@@ -26,7 +27,7 @@ if (process.env.NODE_ENV == "production") {
     app.use(express.static("client/build"));
     app.get("*", (req, res) => {
         // now load the client index.html file to send to the front end user
-        console.log("ggh get");
+        console.log("Client Get request");
         res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
     });
 }
