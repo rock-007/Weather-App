@@ -1,6 +1,9 @@
 # Educational App
 A user is looking for an app to give them quick access to weather information for cities in the UK. Your task is to make an a Minimum Viable Product or prototype to put forward to them - this may only be for a small set of information, and may only showcase some of the features to be included in the final app.
 
+# Link to App
+https://cbc-weather-app.herokuapp.com/
+
 ## MVP
 A user should be able to:
 
