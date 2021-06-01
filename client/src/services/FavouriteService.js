@@ -1,4 +1,4 @@
-const baseURL = "/api/favourites";
+const baseURL = "/api/favourites/";
 export const getFavourites = () => {
     return fetch("/api/favourites", {
         method: "GET",
