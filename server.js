@@ -19,7 +19,6 @@ mongoose.connect(
             console.log("fav api");
             app.use("/api/favourites/", favouritesRouter);
 
-            app.use("/api/favourites/:id", favouritesRouter);
         }
     }
 );
