@@ -17,8 +17,9 @@ mongoose.connect(
             let favouritesRouter = createRouter(collection);
             console.log(favouritesRouter);
             console.log("fav api");
+            app.use("/api/favourites/", favouritesRouter);
 
-            app.use("/api/favourites/*", favouritesRouter);
+            app.use("/api/favourites/:id", favouritesRouter);
         }
     }
 );
