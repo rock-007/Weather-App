@@ -2,7 +2,7 @@ import "./SearchForm.css";
 import "./NavBar.css";
 import { useState } from "react";
 import CCBC from "../Components/CCBC.png";
-const SearchForm = ({ onCitySubmit, addFavourite, onClick }) => {
+const SearchForm = ({ onCitySubmit, addFavourite }) => {
     const [search, setSearch] = useState();
 
     const handleSubmit = function (event) {

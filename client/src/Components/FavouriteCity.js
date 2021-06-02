@@ -1,7 +1,7 @@
 import "./FavouriteCity.css";
 import { WiThermometer, WiDaySunny, WiDayCloudy } from "react-icons/wi";
 
-const FavouriteCity = ({ eachCity, deleteFavourite, favouriteforcast }) => {
+const FavouriteCity = ({ eachCity, deleteFavourite, favourite7DayForcast }) => {
     let displayClouds = function (clouds) {
         if (clouds > 41) {
             return <WiDayCloudy class="icon" />;
@@ -16,7 +16,7 @@ const FavouriteCity = ({ eachCity, deleteFavourite, favouriteforcast }) => {
 
     const handleFavDisplay = (favCity) => {
         console.log(favCity);
-        favouriteforcast(favCity);
+        favourite7DayForcast(favCity);
     };
 
     return (
