@@ -41,7 +41,6 @@ form {
   justify-content: flex-end;
   border: 1px;
   background-color: transparent;
-  height: 40px;
   height: fit-content;
   margin: 20px;
 }

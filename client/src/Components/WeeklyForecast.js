@@ -1,6 +1,6 @@
 import {WiThermometer, WiStrongWind, WiDaySunny, WiRain, WiDayShowers, WiDayCloudy} from "react-icons/wi";
-import './WeekForecast.css';
-import './DayZero.css';
+import './css/WeekForecast.css';
+import './css/DayZero.css';
 
 const WeeklyForecast = ({main, wind, clouds, rain, day}) => {
 

@@ -1,4 +1,4 @@
-import "./SearchForm.css";
+import "./css/SearchForm.css";
 import "./NavBar.css";
 import { useState } from "react";
 import CCBC from "../Components/CCBC.png";

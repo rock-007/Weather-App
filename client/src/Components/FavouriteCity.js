@@ -1,4 +1,4 @@
-import "./FavouriteCity.css";
+import "./css/FavouriteCity.css";
 import { WiThermometer, WiDaySunny, WiDayCloudy } from "react-icons/wi";
 
 const FavouriteCity = ({ eachCity, deleteFavourite, favouriteforcast }) => {

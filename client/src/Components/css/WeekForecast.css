@@ -1,17 +1,28 @@
 .city-card {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   list-style-type: none;
-}
+  width: 100%;
 
-#day-forecast {
+}
+#day-1,
+#day-2,
+#day-3,
+#day-4,
+#day-5,
+#day-6 {
   margin: 30px;
   padding: 30px;
   width: 200px;
   box-shadow: 5px 10px 8px #888888;
   background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
   color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 25px;
 }
 
 #details-list {
@@ -19,18 +30,29 @@
   list-style-type: none;
 }
 
+#city-name {
+  flex: 100% 1;
+  align-content: center;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 30px;
+  padding: 10px;
+}
 
+#daily-chart {
+  flex-basis: 50%;
+  width: 40%;
+  margin: 30px;
+}
 
 ul {
   padding: 0;
 }
 
 #day-number {
-  margin-top: auto;
-  margin-bottom: 10px;
-  padding: 10px;
   text-align: center;
-  font-size: xx-large;
+  font-size: 30px;
 }
 
 li {
@@ -52,22 +74,17 @@ li {
 #rain {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-#min-max-temp {
-  padding: 0;
-  padding-left: 10px;
+#min-max-temp,
+#wind-number,
+#rain-number {
+  width: 100px;
 }
 
-.fav-forecast {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style-type: none;
-}
-
-.fav-forecast ul > li {
-  display: inline;
-  list-style-type: none;
+p {
+  margin: 0px 0px 30px;
 }
 
