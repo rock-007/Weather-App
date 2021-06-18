@@ -3,13 +3,13 @@ import FavouriteCity from "./FavouriteCity";
 const DisplayFavourite = ({
     displayFavourites1,
     deleteFavourite2,
-    favouriteforcast2,
+    favourite7DayForcast,
 }) => {
     const deleteFavourite1 = (city) => {
         deleteFavourite2(city);
     };
-    const favouriteforcast1 = (favCity) => {
-        favouriteforcast2(favCity);
+    const favourite7DayForcast1 = (favCity) => {
+        favourite7DayForcast(favCity);
     };
     const display = displayFavourites1.map((eachFavourite, index) => {
         return (
@@ -17,7 +17,7 @@ const DisplayFavourite = ({
                 eachCity={eachFavourite}
                 key={index}
                 deleteFavourite={deleteFavourite1}
-                favouriteforcast={favouriteforcast1}
+                favourite7DayForcast={favourite7DayForcast1}
             />
         );
     });

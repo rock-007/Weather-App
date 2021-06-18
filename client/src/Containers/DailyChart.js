@@ -12,12 +12,6 @@ import { BsGraphUp } from "react-icons/bs";
 import "react-responsive-modal/styles.css";
 import { Line } from "react-chartjs-2";
 
-
-
-
-
-
-
 const DailyChart = function ({ daily }) {
     const [chartData, setChartData] = useState({
         labels: [
@@ -41,7 +35,6 @@ const DailyChart = function ({ daily }) {
                 ],
                 backgroundColor: ["rgba(75,192,192,0.6)"],
                 borderWidth: 4,
-                // yAxisID: "y-axis-1",
             },
         ],
     });
@@ -65,7 +58,6 @@ const DailyChart = function ({ daily }) {
         const average = daily.reduce((aver, eachHour) => {
             return eachHour["main"]["temp"] + aver;
         }, 0);
-
     };
 
     const averageWinds = (daily) => {};

@@ -1,0 +1,36 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server:dev": "nodemon server.js",
+    "seeds": "mongo < ./db/seeds.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "body-parser": "^1.19.0",
+    "concurrently": "^3.6.0",
+    "config": "^3.0.1",
+    "dotenv": "^8.6.0",
+    "express": "^4.17.1",
+<<<<<<< HEAD:server/package.json
+    "mongodb": "^3.6.9"
+=======
+    "mongodb": "^2.2.33",
+    "mongoose": "^5.12.11"
+>>>>>>> fa36ec2082cc159389b00d4217f864c6d6a0755a:package.json
+  },
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "nodemon": "^2.0.7"
+  }
+}
